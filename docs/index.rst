@@ -6,7 +6,7 @@
 NGaDNAP: Next-generation ancient DNA pipeline.
 ==============================================
 
-:Author: James Boocock and Joseph Saunderson
+:Author: James Boocock (`github <github.com/smilefreak>`_) and Joseph Saunderson (`github <github.com/jsaunderson>`_)
 :contact: james.boocock@otago.ac.nz 
 :License: `MIT <https://opensource.org/licenses/MIT>`_
 :Source code: `Github <https://github.com/smilefreak/NGaDNAP>`_
