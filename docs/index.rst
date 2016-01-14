@@ -17,9 +17,10 @@ Using a number of publicly avaliable tools the pipeline processes raw FASTQ file
 Contents:
 
 .. toctree::
-    :maxdepth: 2
-    intro
-    tutorial
+   :maxdepth: 2
+
+   intro
+   tutorial
 
 Indices and tables
 ==================
