@@ -4,16 +4,14 @@ from collections import defaultdict
 class Graph(object):
     """ Graph data structure, undirected by default. """
 
-    def __init__(self, connections, directed=False):
+    def __init__(self, directed=False):
         self._graph = defaultdict(set)
         self._directed = directed
-        self.add_connections(connections)
 
-    def add_connections(self, connections):
+    def add_connection(self, connections):
         """ Add connections (list of tuple pairs) to graph """
 
-        for node1, node2 in connections:
-            self.add(node1, node2)
+        self.add(node1, node2)
 
     def add(self, node1, node2):
         """ Add connection between node1 and node2 """
@@ -34,4 +32,13 @@ class Graph(object):
             del self._graph[node]
         except KeyError:
             pass
+
+class CommandGraph(Graph):
+    """
+        Graph data structure 
+    """
+    def __init__(self):
+        super(CommandGraph, self).__init__(self,directed=True)
+    
+        
 

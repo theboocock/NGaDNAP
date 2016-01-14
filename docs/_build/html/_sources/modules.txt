@@ -1,0 +1,11 @@
+ancient_dna_pipeline
+====================
+
+.. toctree::
+   :maxdepth: 4
+
+   datastructures
+   dependency_graph
+   pipeline
+   steps
+   utils

@@ -24,7 +24,7 @@ class Tox(TestCommand):
 setup(
     name="NGaDNAP",
     version="1.0",
-    packages=['ancient_dna_pipeline'],
+    packages=['ngadnap'],
     author="James Boocock",
     author_email="james.boocock@otago.ac.nz",
     description="Next-generation ancient DNA pipeline",

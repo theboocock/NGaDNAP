@@ -13,9 +13,7 @@ import ConfigParser
 import logging
 import os
 import sys
-from .standard_run import StandardRun
-from .environment import set_environment
-from ._version import __version__
+from __version__ import __VERSION__ 
 logger = logging.getLogger(__name__)
 SUBPROCESS_FAILED_EXIT = 10
 

@@ -21,6 +21,7 @@ Contents:
    
    installing
    tutorial
+   modules
 
 Indices and tables
 ==================

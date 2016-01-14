@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pipeline &mdash; NGaDNAP 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="NGaDNAP 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">NGaDNAP 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pipeline</h1><div class="highlight"><pre>
+<span class="c"># Python Script to perform for running the single process for our pipeline</span>
+<span class="c">#</span>
+<span class="c"># Murray Cadzow</span>
+<span class="c"># July 2013</span>
+<span class="c"># University Of Otago</span>
+<span class="c">#</span>
+<span class="c"># James Boocock</span>
+<span class="c"># July 2013</span>
+<span class="c"># University Of Otago</span>
+<span class="c">#</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">ConfigParser</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">__version__</span> <span class="kn">import</span> <span class="n">__VERSION__</span> 
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">SUBPROCESS_FAILED_EXIT</span> <span class="o">=</span> <span class="mi">10</span>
+
+<div class="viewcode-block" id="parse_config"><a class="viewcode-back" href="../pipeline.html#pipeline.parse_config">[docs]</a><span class="k">def</span> <span class="nf">parse_config</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Parse config file</span>
+
+<span class="sd">        Reads a config and parses the</span>
+<span class="sd">        arguments into a dictionary.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">config_file</span><span class="p">)</span>
+    <span class="n">config_parsed</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">():</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">args</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+        <span class="n">config_parsed</span><span class="p">[</span><span class="n">section</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">config_parsed</span><span class="p">[</span><span class="n">section</span><span class="p">][</span><span class="n">op</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;exception on {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">op</span><span class="p">))</span>
+                <span class="n">config_parsed</span><span class="p">[</span><span class="n">section</span><span class="p">][</span><span class="n">op</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="n">config_parsed</span>
+
+</div>
+<div class="viewcode-block" id="parse_arguments"><a class="viewcode-back" href="../pipeline.html#pipeline.parse_arguments">[docs]</a><span class="k">def</span> <span class="nf">parse_arguments</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Parse all the comandline arguments for the ancient DNA pipeline.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">&quot;Options for the ancient DNA pipeline&quot;</span><span class="p">)</span>
+    <span class="n">adapt_remove</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&#39;AdapterRemoval&#39;</span><span class="p">)</span>
+    <span class="n">alignment</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&#39;Alignment&#39;</span><span class="p">)</span>
+    <span class="n">sample_qc</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&quot;Sample QC&quot;</span><span class="p">)</span>
+    <span class="n">ancient_filter</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&#39;Ancient Filtering&#39;</span><span class="p">)</span>
+    <span class="n">variant_calling</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&#39;Variant Calling&#39;</span><span class="p">)</span>
+    <span class="n">vcf_qc</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s">&quot;VCF QC&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-l&#39;</span><span class="p">,</span><span class="s">&#39;--log-file&#39;</span><span class="p">,</span> <span class="s">&quot;log_file&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;pipeline_run.log&quot;</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;Log file for the ancient DNA pipeline&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;fastq_files&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Unzipped fastq files in the following format </span><span class="se">\</span>
+<span class="s">                        &lt;SAMPLEID&gt;.*.R1.fastq &lt;SAMPLEID&gt;.*.R2.fastq&quot;</span><span class="p">)</span> 
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-c&#39;</span><span class="p">,</span><span class="s">&#39;--config-file&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;config_file&quot;</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;Path to configuration file&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;/etc/ancient_dna_pipeline.cfg&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-v&#39;</span><span class="p">,</span> <span class="s">&#39;--verbose&#39;</span><span class="p">,</span>
+                        <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;Verbose command output useful for debugging&quot;</span><span class="p">)</span>
+    <span class="n">parse</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--version&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;version&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Print program version&quot;</span><span class="p">,</span>
+                       <span class="n">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-d&#39;</span><span class="p">,</span> <span class="s">&#39;--directory&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;running_directory&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s">&quot;Directory where output file should be placed&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;-l&quot;</span><span class="p">,</span> <span class="s">&quot;--library-type&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;library_type&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Type of Sequencing library: args are double-stranded (ds) and single-stranded (ss)&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--imputation&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">&quot;imputation&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Perform BEAGLE imputation of the VCF file&quot;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;-m&quot;</span><span class="p">,</span><span class="s">&quot;--use-merged_reads&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Use the unmergable reads&quot;</span><span class="p">,</span>
+                        <span class="n">dest</span><span class="o">=</span><span class="s">&quot;use_unmerged_reads&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">adapt_remove</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--minimum-length&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">&quot;Minimum read length to process for analysis&quot;</span><span class="p">,</span>
+                             <span class="n">dest</span><span class="o">=</span><span class="s">&quot;adapt_min_length&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">adapt_remove</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--minimum-quality&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Minimum base quality&quot;</span><span class="p">,</span>
+                             <span class="n">dest</span><span class="o">=</span><span class="s">&quot;adapt_min_qual&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">adapt_remove</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--mismatch-rate&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Mismatch fraction (If &gt;1 set to 1/&lt;mismatch rate&gt;&quot;</span><span class="p">,</span>
+                             <span class="n">dest</span><span class="o">=</span><span class="s">&quot;adapt_mismatch_rate&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">adapt_remove</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--min-length&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Minimum alignment length for merging&quot;</span><span class="p">,</span>
+                             <span class="n">dest</span><span class="o">=</span><span class="s">&quot;adapt_alignment_length&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">alignment</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--algorithm&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;BWA alignment algorithm (mem or aln)&quot;</span><span class="p">,</span> 
+                           <span class="n">dest</span><span class="o">=</span><span class="s">&quot;bwa_algo&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;aln&quot;</span><span class="p">)</span>
+    <span class="n">alignment</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--max-edit-distance&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Maxmimum edit distance (-n aln)&quot;</span><span class="p">,</span>
+                           <span class="n">dest</span><span class="o">=</span><span class="s">&quot;bwa_edit_distance&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
+    <span class="n">alignment</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--max-gap-opens&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Maximum number of gap opens (-o aln)&quot;</span><span class="p">,</span>
+                           <span class="n">dest</span><span class="o">=</span><span class="s">&quot;bwa_gap_opens&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">alignment</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--seeding&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Should seeding be enabled (disabled by default -l 1024 aln)&quot;</span><span class="p">,</span>
+                           <span class="n">dest</span><span class="o">=</span><span class="s">&quot;bwa_seeding&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">)</span>
+    <span class="n">sample_qc</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--min-sample-coverage-percent&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Minimum sample coverage (%)&quot;</span><span class="p">,</span> 
+                           <span class="n">dest</span><span class="o">=</span><span class="s">&quot;min_coverage_percent&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+    <span class="n">ancient_filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&quot;--rescale-bams&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Rescale base qualities using mapDamage&quot;</span><span class="p">,</span>
+                                <span class="n">dest</span><span class="o">=</span><span class="s">&quot;ancient_rescale&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;store_true&quot;</span><span class="p">)</span>
+    <span class="n">ancient_filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--downweight-number&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Number of C-&gt;T transitions at start and G-&gt;A transitions at the end of read to downweight&quot;</span><span class="p">,</span><span class="n">dest</span><span class="o">=</span><span class="s">&quot;ancient_downweight_number&quot;</span> <span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="n">variant_calling</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--min-depth&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">&quot;Minimum variant read-depth&quot;</span><span class="p">,</span>
+                                <span class="n">dest</span><span class="o">=</span><span class="s">&quot;vcf_minimum_depth&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">variant_calling</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;--min-mapping-quality&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;Minimum mapping quality&quot;</span><span class="p">,</span>
+                                <span class="n">dest</span><span class="o">=</span><span class="s">&quot;vcf_min_mapping_quality&quot;</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">ver</span><span class="p">):</span> 
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Version: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__version__</span><span class="p">))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>        
+    <span class="k">return</span> <span class="n">args</span>
+
+</div>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../pipeline.html#pipeline.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; The main function</span>
+
+<span class="sd">        Runs the selection pipeline.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_arguments</span><span class="p">()</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">parse_config</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">set_environment</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;environment&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">cores</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">config</span><span class="p">[</span><span class="s">&#39;system&#39;</span><span class="p">][</span><span class="s">&#39;cores_avaliable&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">cores</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;</span><span class="si">%(asctime)s</span><span class="s">     </span><span class="si">%(message)s</span><span class="s">&#39;</span><span class="p">,</span>
+                        <span class="n">filename</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">log_file</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">&#39;w&#39;</span><span class="p">,</span>
+                        <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">StandardRun</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">run_pipeline</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Selection Pipeline Completed Successfully :)!&quot;</span><span class="p">)</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">NGaDNAP 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, James Boocock and Joseph Saunderson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
