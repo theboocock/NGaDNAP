@@ -18,8 +18,8 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-
-   intro
+   
+   installing
    tutorial
 
 Indices and tables
