@@ -1,0 +1,14 @@
+actionid: python3
+msg: installpkg
+cmdargs: [local('/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/python3/bin/pip'), 'install', '/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/dist/NGaDNAP-1.0.zip']
+env: {'LANG': 'en_NZ.UTF-8', 'PATH': '/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/python3/bin:/Users/smilefreak/Applications/Emacs.app/Contents/MacOS:/Users/smilefreak/resequencing/snp_skat/query_gemini:/Users/smilefreak/circos/circos-0.67-4/bin:/usr/local/bin:/Users/smilefreak/Applications/android/sdk/platform-tools:/Library/TeX/Root/bin/universal-darwin:/Users/smilefreak/Library/Python/2.7/bin:/Developer/NVIDIA/CUDA-5.5/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/smilefreak/bin:/usr/local/Cellar/go/1.2.1/libexec/bin:/Applications/Julia-0.2.1.app/Contents/Resources/julia/bin/:/Users/smilefreak/Apples/homer/weblogo/:/Users/smilefreak/Apples/homer/bin:/Users/smilefreak/blast_appl/ncbi-blast-2.2.30+/bin:/Users/smilefreak/blast_appl/last/src/:/Users/smilefreak/anna/annovar/annovar:/Users/smilefreak/.ec2/bin', 'VIRTUAL_ENV': '/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/python3', 'PYTHONHASHSEED': '3395335107', 'TMPDIR': '/var/folders/x2/c72g46450957vzsh8vgg9j3m0000gn/T/'}
+
+You are using pip version 7.0.3, however version 7.1.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Processing ./.tox/dist/NGaDNAP-1.0.zip
+Building wheels for collected packages: NGaDNAP
+  Running setup.py bdist_wheel for NGaDNAP
+  Stored in directory: /Users/smilefreak/Library/Caches/pip/wheels/85/21/5b/5b80c120096708e4706d88f84b9a2ba1313c472d74053647c2
+Successfully built NGaDNAP
+Installing collected packages: NGaDNAP
+Successfully installed NGaDNAP-1.0

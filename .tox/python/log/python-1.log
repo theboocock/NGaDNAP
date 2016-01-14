@@ -1,0 +1,13 @@
+actionid: python
+msg: getenv
+cmdargs: [local('/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/python/bin/pip'), 'install', 'pytest']
+env: {'LANG': 'en_NZ.UTF-8', 'PATH': '/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/python/bin:/Users/smilefreak/Applications/Emacs.app/Contents/MacOS:/Users/smilefreak/resequencing/snp_skat/query_gemini:/Users/smilefreak/circos/circos-0.67-4/bin:/usr/local/bin:/Users/smilefreak/Applications/android/sdk/platform-tools:/Library/TeX/Root/bin/universal-darwin:/Users/smilefreak/Library/Python/2.7/bin:/Developer/NVIDIA/CUDA-5.5/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/smilefreak/bin:/usr/local/Cellar/go/1.2.1/libexec/bin:/Applications/Julia-0.2.1.app/Contents/Resources/julia/bin/:/Users/smilefreak/Apples/homer/weblogo/:/Users/smilefreak/Apples/homer/bin:/Users/smilefreak/blast_appl/ncbi-blast-2.2.30+/bin:/Users/smilefreak/blast_appl/last/src/:/Users/smilefreak/anna/annovar/annovar:/Users/smilefreak/.ec2/bin', 'VIRTUAL_ENV': '/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/python', 'PYTHONHASHSEED': '3395335107', 'TMPDIR': '/var/folders/x2/c72g46450957vzsh8vgg9j3m0000gn/T/'}
+
+You are using pip version 7.0.3, however version 7.1.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Collecting pytest
+  Using cached pytest-2.8.5-py2.py3-none-any.whl
+Collecting py>=1.4.29 (from pytest)
+  Using cached py-1.4.31-py2.py3-none-any.whl
+Installing collected packages: py, pytest
+Successfully installed py-1.4.31 pytest-2.8.5

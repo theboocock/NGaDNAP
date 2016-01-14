@@ -1,0 +1,47 @@
+actionid: tox
+msg: packaging
+cmdargs: ['/usr/bin/python', local('/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/setup.py'), 'sdist', '--formats=zip', '--dist-dir', local('/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/.tox/dist')]
+env: None
+
+running sdist
+running egg_info
+writing NGaDNAP.egg-info/PKG-INFO
+writing top-level names to NGaDNAP.egg-info/top_level.txt
+writing dependency_links to NGaDNAP.egg-info/dependency_links.txt
+package init file 'ancient_dna_pipeline/__init__.py' not found (or not a regular file)
+reading manifest file 'NGaDNAP.egg-info/SOURCES.txt'
+writing manifest file 'NGaDNAP.egg-info/SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt
+
+running check
+creating NGaDNAP-1.0
+creating NGaDNAP-1.0/NGaDNAP.egg-info
+creating NGaDNAP-1.0/ancient_dna_pipeline
+making hard links in NGaDNAP-1.0...
+hard linking setup.cfg -> NGaDNAP-1.0
+hard linking setup.py -> NGaDNAP-1.0
+hard linking NGaDNAP.egg-info/PKG-INFO -> NGaDNAP-1.0/NGaDNAP.egg-info
+hard linking NGaDNAP.egg-info/SOURCES.txt -> NGaDNAP-1.0/NGaDNAP.egg-info
+hard linking NGaDNAP.egg-info/dependency_links.txt -> NGaDNAP-1.0/NGaDNAP.egg-info
+hard linking NGaDNAP.egg-info/not-zip-safe -> NGaDNAP-1.0/NGaDNAP.egg-info
+hard linking NGaDNAP.egg-info/top_level.txt -> NGaDNAP-1.0/NGaDNAP.egg-info
+hard linking ancient_dna_pipeline/__version__.py -> NGaDNAP-1.0/ancient_dna_pipeline
+hard linking ancient_dna_pipeline/ancient_workflow.py -> NGaDNAP-1.0/ancient_dna_pipeline
+hard linking ancient_dna_pipeline/create_and_run_all_jobs.py -> NGaDNAP-1.0/ancient_dna_pipeline
+hard linking ancient_dna_pipeline/pipeline.py -> NGaDNAP-1.0/ancient_dna_pipeline
+copying setup.cfg -> NGaDNAP-1.0
+Writing NGaDNAP-1.0/setup.cfg
+creating '.tox/dist/NGaDNAP-1.0.zip' and adding 'NGaDNAP-1.0' to it
+adding 'NGaDNAP-1.0/PKG-INFO'
+adding 'NGaDNAP-1.0/setup.cfg'
+adding 'NGaDNAP-1.0/setup.py'
+adding 'NGaDNAP-1.0/ancient_dna_pipeline/__version__.py'
+adding 'NGaDNAP-1.0/ancient_dna_pipeline/ancient_workflow.py'
+adding 'NGaDNAP-1.0/ancient_dna_pipeline/create_and_run_all_jobs.py'
+adding 'NGaDNAP-1.0/ancient_dna_pipeline/pipeline.py'
+adding 'NGaDNAP-1.0/NGaDNAP.egg-info/dependency_links.txt'
+adding 'NGaDNAP-1.0/NGaDNAP.egg-info/not-zip-safe'
+adding 'NGaDNAP-1.0/NGaDNAP.egg-info/PKG-INFO'
+adding 'NGaDNAP-1.0/NGaDNAP.egg-info/SOURCES.txt'
+adding 'NGaDNAP-1.0/NGaDNAP.egg-info/top_level.txt'
+removing 'NGaDNAP-1.0' (and everything under it)
