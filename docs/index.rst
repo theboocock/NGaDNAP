@@ -12,7 +12,7 @@ NGaDNAP: Next-generation ancient DNA pipeline.
 :Source code: `Github <https://github.com/smilefreak/NGaDNAP>`_
 
 NGaDNAP is a bioinformatics pipeline that was designed to process and analyse NGS generated for the study of ancient DNA data.
-Using publicly avaliable and accepted tools the pipeline processes raw FASTQ files through all the important steps of any NGS analysis. In addition, the pipeline augments the standard NGS pipeline with a number of extra processing steps specific for ancient DNA analysis, such as checking for contamination, adjusting base qualities by damage probabilities, and lowering the base quality of the sites at the beginning and end of the reads (these are most likely to be damaged)
+Using a number of publicly avaliable tools the pipeline processes raw FASTQ files through all the important steps of a NGS analysis. In addition, the pipeline augments the standard NGS pipeline with a number of extra processing steps specific for ancient DNA analysis, such as checking for contamination, adjusting base qualities by damage probabilities, and lowering the base quality of the sites at the beginning and end of the reads (these are most likely to be damaged). While a number of other pipelines exist for this purpose, such as PALEOMIX, NGaDNAPs true defining feature is the web-interface to the pipeline that provides not only an interface to process and manage the runs of the pipeline, but also some visualisation and analysis of the results.
 
 Contents:
 
