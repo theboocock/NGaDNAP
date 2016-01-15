@@ -3,15 +3,18 @@ python:
     - "2.7_with_system_site_packages"
     - "3.5_with_system_site_packages"
 sudo: required
-env:
-    - TOXENV=py27
 install:
     - pip install tox
-script:
-    - tox
+    - pip install coveralls 
+    - pip install pytest
+script: >
+    tox && 
+    python setup.py install && 
+    py.test --cov=ngadnap tests
 git:
     submodules: false
 # Use sed to replace the SSH URL with the public URL, then initialize submodules
 before_install:
     - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-
+after_success:
+    - coveralls
