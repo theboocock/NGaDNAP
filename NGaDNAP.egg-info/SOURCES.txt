@@ -5,7 +5,7 @@ NGaDNAP.egg-info/SOURCES.txt
 NGaDNAP.egg-info/dependency_links.txt
 NGaDNAP.egg-info/not-zip-safe
 NGaDNAP.egg-info/top_level.txt
-ancient_dna_pipeline/__version__.py
-ancient_dna_pipeline/ancient_workflow.py
-ancient_dna_pipeline/create_and_run_all_jobs.py
-ancient_dna_pipeline/pipeline.py
+ngadnap/__version__.py
+ngadnap/ancient_workflow.py
+ngadnap/create_and_run_all_jobs.py
+ngadnap/pipeline.py
