@@ -1,1 +1,6 @@
 .tox/*
+.eggs/*
+.cache/*
+build/*
+dist/*
+
