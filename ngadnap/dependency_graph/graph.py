@@ -1,6 +1,11 @@
 from collections import defaultdict
 import sys
 
+from threading import Thread
+from time import sleep
+
+import logging
+
 from ngadnap.exceptions.error_codes import * 
 
 class Graph(object):
@@ -9,11 +14,6 @@ class Graph(object):
     def __init__(self, directed=False):
         self._graph = defaultdict(set)
         self._directed = directed
-
-    def add_connection(self, connections):
-        """ Add connections (list of tuple pairs) to graph """
-
-        self.add(node1, node2)
 
     def add(self, node1, node2):
         """ Add connection between node1 and node2 """
@@ -34,6 +34,14 @@ class Graph(object):
             del self._graph[node]
         except KeyError:
             pass
+    def nodes(self):
+        return(self._graph.keys())
+
+    def get_adjacent(self, node):
+        """
+            Extract the adjacent nodes from the graph.
+        """
+        return(self._graph[node])
 
 class CommandNode(object):
     """
@@ -52,16 +60,22 @@ class CommandNode(object):
     @property
     def command(self):
         return self._command
-    @property 
+
     def dependency_free(self):
         return self._can_run
+    @property 
+    def run(self):
+        return self._run
+    
+    @property
+    def success(self):
+        return self._success
 
     def run_job(self):
         if self._can_run:
             self.job_queue.add_command(self)
             # Add to job running queue
             
-
     def set_runnable(self, run_var):
         self._can_run = run_var
         self.run_job()
@@ -75,7 +89,8 @@ class CommandGraph(Graph):
         Graph data structure for representing big list of jobs. 
     """
     def __init__(self, job_queue):
-        super(CommandGraph, self).__init__(self,directed=True)
+        super(CommandGraph, self).__init__(self, directed=True)
+        self.job_queue = job_queue
         
     def add_node(self, command_node, depends_on):
         """
@@ -85,15 +100,54 @@ class CommandGraph(Graph):
             logging.error("Could not add node as parent set was not a list")
             sys.exit(FAILED_ADDING_COMMAND_NODE)
         for temp_depends in depends_on: 
-            super(CommandGraph, self).add(self, str(temp_depends), (command_node))
+            super(CommandGraph, self).add(self, (temp_depends), (command_node))
 
-    def update(self, job, success):
+    def _get_runnable_jobs(self):
+        commands_to_run = []
+        nodes = super(CommandGraph, self).nodes()
+        for node in nodes:
+            if node.run != True:
+                adjacent_nodes = super(CommandGraph, self).get_adjacent(node)
+                total_success = 0
+                for adj in adjacent_nodes: 
+                    if adj.success:
+                        total_success += 1 
+                if total_success == len(adjacent_nodes): 
+                    commands_to_run.append(node)
+        return commands_to_run 
+
+        
+
+    def _send_new_commands(self):
         """
-            Update jobs status 
+            Add's new jobs to the command to enable further processing.
+        """
+        new_commands = self._get_runnable_commands()
+        for command in new_commands(): 
+            self.job_queue.put(command)
+
+    def _finished(self):
+        nodes = super(CommandGraph, self).nodes()
+        successes = sum([node.success for node in nodes])
+        if successes == nodes:
+            return True
+        else:
+            return False
+
+    def update(self, command, success):
+        """
+            Update command status and check whether all commands are complete 
         """
         # Mark parent as complete and so then search for new avaliable jobs to run
         if success:
-            job.update_node_success(True)
+            command.update_node(run=True, success=True)
+            finished = _finished()
+            if finished:
+                logging.info("Pipeline completed successfully !")
+                # cleanup pipeline and finished the process
+            self._send_new_commands()
             # get list of new jobs that can be run.
         else:
             logging.error("Job failed to run correctly check log for more information")
+
+

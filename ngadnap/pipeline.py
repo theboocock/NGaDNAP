@@ -13,7 +13,7 @@ import ConfigParser
 import logging
 import os
 import sys
-from __version__ import __VERSION__ 
+from ngadnap.__version__ import __VERSION__ 
 logger = logging.getLogger(__name__)
 SUBPROCESS_FAILED_EXIT = 10
 
@@ -52,7 +52,7 @@ def parse_arguments():
     ancient_filter = parser.add_argument_group('Ancient Filtering')
     variant_calling = parser.add_argument_group('Variant Calling')
     vcf_qc = parser.add_argument_group("VCF QC")
-    parser.add_argument('-l','--log-file', "log_file", default="pipeline_run.log", 
+    parser.add_argument('-l','--log-file', dest="log_file", default="pipeline_run.log", 
                         help="Log file for the ancient DNA pipeline")
     parser.add_argument("fastq_files", help="Unzipped fastq files in the following format \
                         <SAMPLEID>.*.R1.fastq <SAMPLEID>.*.R2.fastq") 
@@ -61,11 +61,11 @@ def parse_arguments():
     parser.add_argument('-v', '--verbose',
                         action="store_true", dest='verbose', default=False,
                         help="Verbose command output useful for debugging")
-    parse.add_argument("--version", dest="version", help="Print program version",
-                       action="")
+    parser.add_argument("--version", dest="version", help="Print program version", action="store_true",
+                        default=False)
     parser.add_argument('-d', '--directory', dest="running_directory",
                         help="Directory where output file should be placed")
-    parser.add_argument("-l", "--library-type", dest="library_type", help="Type of Sequencing library: args are double-stranded (ds) and single-stranded (ss)")
+    parser.add_argument("-t", "--library-type", dest="library_type", help="Type of Sequencing library: args are double-stranded (ds) and single-stranded (ss)")
     parser.add_argument("--imputation", dest="imputation", help="Perform BEAGLE imputation of the VCF file",
                         default=False, action="store_true")
     parser.add_argument("-m","--use-merged_reads", help="Use the unmergable reads",
@@ -95,7 +95,6 @@ def parse_arguments():
                                 dest="vcf_minimum_depth", default=2)
     variant_calling.add_argument('--min-mapping-quality', help="Minimum mapping quality",
                                 dest="vcf_min_mapping_quality",default=20)
-    
     args = parser.parse_args()
     if(args.verbose):
         logger.setLevel(logging.DEBUG)

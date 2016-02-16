@@ -6,6 +6,8 @@
 """
 import pytest
 
+import ngadnap.pipeline
+
 class TestVCFToFasta:
     
     def test_create_directory(self, tmpdir):
