@@ -1,9 +1,5 @@
 # Python Script to perform for running the single process for our pipeline
 #
-# Murray Cadzow
-# July 2013
-# University Of Otago
-#
 # James Boocock
 # July 2013
 # University Of Otago

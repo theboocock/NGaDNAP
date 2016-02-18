@@ -47,8 +47,9 @@ class CommandNode(object):
     """
         Represents a job (node) for running in a command graph 
     """
-    def __init__(self, command_string, id_string): 
+    def __init__(self, command_string, id_string, job_queue): 
         self._command = command_string 
+        self._job_queue = job_queue
         self._id = id_string
         self._run = False
         self._success = False
@@ -73,12 +74,11 @@ class CommandNode(object):
 
     def run_job(self):
         if self._can_run:
-            self.job_queue.add_command(self)
+            self._job_queue.add_command(self)
             # Add to job running queue
             
     def set_runnable(self, run_var):
         self._can_run = run_var
-        self.run_job()
 
     def update_node(self, run, success):
         self._run = run
@@ -89,7 +89,7 @@ class CommandGraph(Graph):
         Graph data structure for representing big list of jobs. 
     """
     def __init__(self, job_queue):
-        super(CommandGraph, self).__init__(self, directed=True)
+        super(CommandGraph, self).__init__(directed=True)
         self.job_queue = job_queue
         
     def add_node(self, command_node, depends_on):
