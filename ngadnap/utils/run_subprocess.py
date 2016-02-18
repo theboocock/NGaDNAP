@@ -9,6 +9,8 @@ from time import sleep
 import logging
 STOP=False
 
+from ngadnap.exceptions.error_codes import *
+
 def run_subprocess(
     command, tool, stdout=None,
     stderr=None, stdoutlog=False,

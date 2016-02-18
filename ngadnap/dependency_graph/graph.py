@@ -25,7 +25,7 @@ class Graph(object):
     def remove(self, node):
         """ Remove all references to node """
 
-        for n, cxns in self._graph.iteritems():
+        for n, cxns in self._graph.items():
             try:
                 cxns.remove(node)
             except KeyError:
@@ -35,7 +35,11 @@ class Graph(object):
         except KeyError:
             pass
     def nodes(self):
-        return(self._graph.keys())
+        items = [item for o in self._graph.keys() for item in self._graph[o]]
+        keys = list(self._graph.keys())
+        keys.extend(items) 
+        keys=list(set(keys))
+        return(keys)
 
     def get_adjacent(self, node):
         """
@@ -52,7 +56,6 @@ class CommandNode(object):
         self._id = id_string
         self._run = False
         self._success = False
-        self._can_run = False
         self._stdout = stdout
         self._working_dir = working_dir
  
@@ -80,16 +83,6 @@ class CommandNode(object):
     def success(self):
         return self._success
     
-    def dependency_free(self):
-        return self._can_run
-
-    def run_job(self):
-        if self._can_run:
-            self._job_queue.add_command(self)
-            # Add to job running queue
-            
-    def set_runnable(self, run_var):
-        self._can_run = run_var
 
     def update_node(self, run, success):
         self._run = run
@@ -102,7 +95,8 @@ class CommandGraph(Graph):
     def __init__(self, job_queue):
         super(CommandGraph, self).__init__(directed=True)
         self.job_queue = job_queue
-        
+        self.node_list = {}
+
     def add_node(self, command_node, depends_on):
         """
             Adds node to directed graph
@@ -111,20 +105,25 @@ class CommandGraph(Graph):
             logging.error("Could not add node as parent set was not a list")
             sys.exit(FAILED_ADDING_COMMAND_NODE)
         for temp_depends in depends_on: 
-            super(CommandGraph, self).add(self, (temp_depends), (command_node))
+            super(CommandGraph, self).add(str(command_node), str(temp_depends))
+            self.node_list[str(temp_depends)] = temp_depends
+        self.node_list[str(command_node)] = command_node
 
     def _get_runnable_commands(self):
         commands_to_run = []
-        nodes = super(CommandGraph, self).nodes()
+        nodes = list(self.node_list.keys())
         for node in nodes:
-            if node.run != True:
-                adjacent_nodes = super(CommandGraph, self).get_adjacent(node)
+            node_obj = self.node_list[node]
+            if node_obj.run != True:
+                adjacent_nodes = self.get_adjacent(node)
                 total_success = 0
-                for adj in adjacent_nodes: 
+                for adj in adjacent_nodes:
+                    adj = self.node_list[adj]
                     if adj.success:
                         total_success += 1 
                 if total_success == len(adjacent_nodes): 
                     commands_to_run.append(node)
+        print([str(o) for o in commands_to_run])
         return commands_to_run 
 
         
@@ -134,16 +133,33 @@ class CommandGraph(Graph):
             Add's new jobs to the command to enable further processing.
         """
         new_commands = self._get_runnable_commands()
-        for command in new_commands: 
-            self.job_queue.add_command(command)
+        for command in new_commands:
+            self.node_list[command].update_node(True, False)
+            self.job_queue.add_job(self.node_list[command])
 
     def _finished(self):
         nodes = super(CommandGraph, self).nodes()
-        successes = sum([node.success for node in nodes])
-        if successes == nodes:
+        successes = sum([self.node_list[node].success for node in self.node_list.keys()])
+        if successes == len(nodes):
             return True
         else:
             return False
+
+    def finish_block(self):
+        """
+            Method to call and block until
+            the end of the method.
+        """
+        while True:
+            finished = self._finished()
+            if finished:
+                break
+            else:
+                sleep(1)
+
+
+    def start(self):
+        self._send_new_commands()
 
     def update(self, command, success):
         """
@@ -152,7 +168,7 @@ class CommandGraph(Graph):
         # Mark parent as complete and so then search for new avaliable jobs to run
         if success:
             command.update_node(run=True, success=True)
-            finished = _finished()
+            finished = self._finished()
             if finished:
                 logging.info("Pipeline completed successfully !")
                 # cleanup pipeline and finished the process

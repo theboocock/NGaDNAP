@@ -12,6 +12,7 @@ from ngadnap.utils.run_subprocess import STOP
 from Queue import Queue
 from threading import Thread
 import sys
+import logging
 
 def __queue_worker__(q):
     while True:
@@ -24,6 +25,8 @@ def __queue_worker__(q):
             stderr = queue_item[3]
             folder_names = queue_item[4]
             id_string = queue_item[5]
+            command = queue_item[6]
+            dependency_graph = queue_item[7]
         except IndexError:
             cmd = queue_item[0]
             stdout = queue_item[1]
@@ -37,7 +40,10 @@ def __queue_worker__(q):
         except SystemExit:
             global STOP
             STOP = True
-            logger.error(cmd + ": Failed to run in thread")
+            logging.error(cmd + ": Failed to run in thread")
+        # This needs to be done so we can test the job runner independently
+        if dependency_graph is not None:
+            dependency_graph.update(command, True)
         q.task_done()
 
 
@@ -50,11 +56,17 @@ class JobQueue(object):
         self._queue = Queue()
         self._no_threads = no_threads
         thread_L = []
+        self._command_graph = None
         for i in range(int(no_threads)):
             t = Thread(target=__queue_worker__, args=[self._queue])
             t.daemon = True
             thread_L.append(t)
             t.start()
+
+    def set_command_graph(self, command_graph):
+        self._command_graph = command_graph
+
+
     def no_jobs(self):
         return len(self._queue)
 
@@ -68,7 +80,7 @@ class JobQueue(object):
         stdoutlog = False
         if stdout is None:
             stdout_log = True 
-        self._queue.put([cmd, stdout, stdoutlog, stderr, working_dir, id_string])
+        self._queue.put([cmd, stdout, stdoutlog, stderr, working_dir, id_string, command, self._command_graph])
         global STOP 
         if STOP == True:
             sys.exit(SUBPROCESS_FAILED_EXIT)

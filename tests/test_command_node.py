@@ -6,5 +6,3 @@ class TestCommandNode:
         c = CommandNode("echo hello", "1")
         assert(str(c) == "1")
         assert(c.command == "echo hello")
-        c.set_runnable(True)
-        assert(c.dependency_free())
