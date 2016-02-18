@@ -8,8 +8,11 @@
 
 from ngadnap.utils.run_subprocess import run_subprocess
 from ngadnap.exceptions.error_codes import *
-from ngadnap.utils.run_subprocess import STOP 
-from Queue import Queue
+from ngadnap.utils.run_subprocess import STOP
+try:
+    from Queue import Queue
+except ImportError:
+    from queue import Queue
 from threading import Thread
 import sys
 import logging

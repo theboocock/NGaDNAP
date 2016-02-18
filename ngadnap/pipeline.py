@@ -5,7 +5,10 @@
 # University Of Otago
 #
 import argparse
-import ConfigParser
+try:
+    import ConfigParser
+except: 
+    import configparser as ConfigParser
 import logging
 import os
 import sys
