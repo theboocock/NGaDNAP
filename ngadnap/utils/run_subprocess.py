@@ -20,6 +20,9 @@ def run_subprocess(
     command = shlex.split(command)
     if (working_dir is None):
         working_dir = '.'
+    else:
+        if stdout is not None:
+            stdout = os.path.join(working_dir, stdout)  
 #    if(tool == 'selection_pipeline'):
  #       stderr = working_dir+'/selection_stderr.tmp'
   #      stdout = working_dir+ '/selection_stdout.tmp'
@@ -30,7 +33,10 @@ def run_subprocess(
         standard_err = open(stderr, 'w')
     try:
         if(stdout is None):
-            standard_out = open('stdout.tmp', 'w')
+            standard_out_file = "stdout_" + tool + ".tmp" 
+            if working_dir != ".":
+                standard_out_file = os.path.join(working_dir,"stdout_" + tool + ".tmp")
+            standard_out = open(standard_out_file, 'w')
             exit_code = subprocess.Popen(
                 command, stderr=standard_out, stdout=standard_err,cwd=working_dir)
         else:
@@ -41,16 +47,16 @@ def run_subprocess(
             else:
                 stdout = open(stdout, 'w')
                 exit_code = subprocess.Popen(
-                    command, stdout=stdout, stderr=standard_err,cwd=working_dir)
+                    command, stdout=stdout, stderr=standard_err, cwd=working_dir)
             standard_out = stdout
     except:
-        logger.error(tool + " failed to run " + ' '.join(command))
+        logging.error(tool + " failed to run " + ' '.join(command))
         standard_err = open(stderr, 'r')
         while True:
             line = standard_err.readline()
             if not line:
                 break
-            logger.info(tool + " STDERR: " + line.strip())
+            logging.info(tool + " STDERR: " + line.strip())
         standard_err.close()
         sys.exit(SUBPROCESS_FAILED_EXIT)
     try:
@@ -74,16 +80,16 @@ def run_subprocess(
     standard_out.close()
     standard_err = open(stderr, 'r')
     if(exit_code.returncode != 0):
-        logger.error(tool + " failed to run " + ' '.join(command))
+        logging.error(tool + " failed to run " + ' '.join(command))
         while True:
             line = standard_err.readline()
             if not line:
                 break
-            logger.info(tool + " STDERR: " + line.strip())
+            logging.info(tool + " STDERR: " + line.strip())
         sys.exit(SUBPROCESS_FAILED_EXIT)
     stdout_log = False
     if(stdout is None):
-        standard_out = open('stdout.tmp', 'r')
+        standard_out = open(standard_out_file, 'r')
         stdout_log = True
     elif(stdoutlog):
         if(hasattr(stdout, 'write')):
@@ -96,21 +102,21 @@ def run_subprocess(
             line = standard_out.readline()
             if not line:
                 break
-            logger.info(tool + " STDOUT: " + line.strip())
+            logging.info(tool + " STDOUT: " + line.strip())
         standard_out.close()
     while True:
         line = standard_err.readline()
         if not line:
             break
-        logger.info(tool + " STDERR: " + line.strip())
-    logger.info("Finished tool " + tool)
-    logger.debug("command = " + ' '.join(command))
+        logging.info(tool + " STDERR: " + line.strip())
+    logging.info("Finished tool " + tool)
+    logging.debug("command = " + ' '.join(command))
     standard_err.close()
     standard_out.close()
     # Removed stdout if it either was not specified
     # or the log was specified.
-    if(stdout is None or stdout is 'selection_stdout.tmp'):
-        os.remove('stdout.tmp')
+    if(stdout is None):
+        os.remove(standard_out_file)
     elif(stdoutlog):
         os.remove(standard_out.name)
     os.remove(stderr)

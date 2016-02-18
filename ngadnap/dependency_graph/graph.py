@@ -47,23 +47,31 @@ class CommandNode(object):
     """
         Represents a job (node) for running in a command graph 
     """
-    def __init__(self, command_string, id_string, job_queue): 
-        self._command = command_string 
-        self._job_queue = job_queue
+    def __init__(self, command_string, id_string, stdout=None, working_dir=None):
+        self._command = command_string
         self._id = id_string
         self._run = False
         self._success = False
         self._can_run = False
-
+        self._stdout = stdout
+        self._working_dir = working_dir
+ 
     def __str__(self):
         return self._id
-    
+    @property
+    def working_dir(self):
+        return self._working_dir
+
     @property
     def command(self):
         return self._command
-
-    def dependency_free(self):
-        return self._can_run
+    @property
+    def id_string(self):
+        return self._id
+    @property
+    def stdout(self):
+        return self._stdout
+    
     @property 
     def run(self):
         return self._run
@@ -71,6 +79,9 @@ class CommandNode(object):
     @property
     def success(self):
         return self._success
+    
+    def dependency_free(self):
+        return self._can_run
 
     def run_job(self):
         if self._can_run:
@@ -102,7 +113,7 @@ class CommandGraph(Graph):
         for temp_depends in depends_on: 
             super(CommandGraph, self).add(self, (temp_depends), (command_node))
 
-    def _get_runnable_jobs(self):
+    def _get_runnable_commands(self):
         commands_to_run = []
         nodes = super(CommandGraph, self).nodes()
         for node in nodes:
@@ -123,8 +134,8 @@ class CommandGraph(Graph):
             Add's new jobs to the command to enable further processing.
         """
         new_commands = self._get_runnable_commands()
-        for command in new_commands(): 
-            self.job_queue.put(command)
+        for command in new_commands: 
+            self.job_queue.add_command(command)
 
     def _finished(self):
         nodes = super(CommandGraph, self).nodes()
