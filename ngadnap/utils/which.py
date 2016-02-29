@@ -8,20 +8,23 @@ import logging
 
 
 def __is_exe__(fpath):
-    """ Return true if the path is a file and the executable bit is set
+    """ 
+        Return true if the path is a file and the executable bit is set
     """
     return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
 
 def __is_file__(fpath):
-    """ Return true if the path is a file
+    """ 
+        Return true if the path is a file
     """
     return os.path.isfile(fpath)
 
 def which(program, program_name):
-    """ Checks whether the file exists on the path or the system path
+    """ 
+        Checks whether the file exists on the path or the system path
     """
     program = os.path.expanduser(program)
-    fpath, fname = os.path.split(program)
+    fpath = os.path.dirname(program)
     if fpath:
         if __is_exe__(program):
             return True 
