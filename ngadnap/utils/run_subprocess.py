@@ -5,9 +5,12 @@ import sys
 import subprocess
 import shlex
 from threading import Thread
+from threading import Lock
 from time import sleep
 import logging
 STOP=False
+
+log_writer = Lock()
 
 from ngadnap.exceptions.error_codes import *
 
@@ -54,19 +57,20 @@ def run_subprocess(
     except:
         logging.error(tool + " failed to run " + ' '.join(command))
         standard_err = open(stderr, 'r')
-        while True:
-            line = standard_err.readline()
-            if not line:
-                break
-            logging.info(tool + " STDERR: " + line.strip())
-        standard_err.close()
-        sys.exit(SUBPROCESS_FAILED_EXIT)
+        with log_writer:
+            while True:
+                line = standard_err.readline()
+                if not line:
+                    break
+                logging.info(tool + " STDERR: " + line.strip())
+            standard_err.close()
+            sys.exit(SUBPROCESS_FAILED_EXIT)
     try:
         while(exit_code.poll() is None):
             sleep(0.2)
             if(STOP == True):
                 exit_code.send_signal(signal.SIGINT) 
-                if (with_queue) :
+                if with_queue:
                    return
                 else:
                     sys.exit(SUBPROCESS_FAILED_EXIT)
@@ -74,7 +78,7 @@ def run_subprocess(
         exit_code.send_signal(signal.SIGINT) 
         global STOP
         STOP = True
-        if( with_queue) :
+        if with_queue:
             return
         else:
             sys.exit(SUBPROCESS_FAILED_EXIT)
@@ -83,12 +87,13 @@ def run_subprocess(
     standard_err = open(stderr, 'r')
     if(exit_code.returncode != 0):
         logging.error(tool + " failed to run " + ' '.join(command))
-        while True:
-            line = standard_err.readline()
-            if not line:
-                break
-            logging.info(tool + " STDERR: " + line.strip())
-        sys.exit(SUBPROCESS_FAILED_EXIT)
+        with log_writer:
+            while True:
+                line = standard_err.readline()
+                if not line:
+                    break
+                logging.info(tool + " STDERR: " + line.strip())
+            sys.exit(SUBPROCESS_FAILED_EXIT)
     stdout_log = False
     if(stdout is None):
         standard_out = open(standard_out_file, 'r')
@@ -100,17 +105,19 @@ def run_subprocess(
             standard_out = open(stdout, 'r')
         stdout_log = True
     if(stdout_log):
+        with log_writer:
+            while True:
+                line = standard_out.readline()
+                if not line:
+                    break
+                logging.info(tool + " STDOUT: " + line.strip())
+            standard_out.close()
+    with log_writer:
         while True:
-            line = standard_out.readline()
+            line = standard_err.readline()
             if not line:
                 break
-            logging.info(tool + " STDOUT: " + line.strip())
-        standard_out.close()
-    while True:
-        line = standard_err.readline()
-        if not line:
-            break
-        logging.info(tool + " STDERR: " + line.strip())
+            logging.info(tool + " STDERR: " + line.strip())
     logging.info("Finished tool " + tool)
     logging.debug("command = " + ' '.join(command))
     standard_err.close()

@@ -1,0 +1,168 @@
+2016-02-29 18:59:22,896     Creating Job Queue
+2016-02-29 18:59:22,897     Success
+2016-02-29 18:59:22,897     Started populating Job Graph
+2016-02-29 18:59:26,159     Finished tool sample_R1_001.fastq.adapter_removal
+2016-02-29 18:59:26,160     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R2_001.fastq --outputstats sample_R1_001.fastq.stats --trimns --outputcollapsed sample_R1_001.fastq.collapsed --minlength 25 --output1 sample_R1_001.fastq.p1 --output2 sample_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
+2016-02-29 18:59:29,613     Finished tool sample1_R1_001.fastq.adapter_removal
+2016-02-29 18:59:29,613     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R2_001.fastq --outputstats sample1_R1_001.fastq.stats --trimns --outputcollapsed sample1_R1_001.fastq.collapsed --minlength 25 --output1 sample1_R1_001.fastq.p1 --output2 sample1_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
+2016-02-29 18:59:29,820     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+2016-02-29 18:59:29,820     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+2016-02-29 18:59:29,820     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+2016-02-29 18:59:29,820     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+2016-02-29 18:59:29,820     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+2016-02-29 18:59:29,820     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
+2016-02-29 18:59:29,821     sample_R1_001.fastq.p1aln STDERR: [main] Real time: 0.060 sec; CPU: 0.062 sec
+2016-02-29 18:59:29,821     Finished tool sample_R1_001.fastq.p1aln
+2016-02-29 18:59:29,821     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+2016-02-29 18:59:30,030     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+2016-02-29 18:59:30,031     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+2016-02-29 18:59:30,031     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+2016-02-29 18:59:30,031     sample_R2_001.fastq.p2aln STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:30,031     sample_R2_001.fastq.p2aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
+2016-02-29 18:59:30,031     sample_R2_001.fastq.p2aln STDERR: [main] Real time: 0.042 sec; CPU: 0.044 sec
+2016-02-29 18:59:30,031     Finished tool sample_R2_001.fastq.p2aln
+2016-02-29 18:59:30,031     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] calculate SA coordinate... 0.16 sec
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] 18947 sequences have been processed.
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
+2016-02-29 18:59:30,444     sample_R1_001.fastq.collapsedaln STDERR: [main] Real time: 0.219 sec; CPU: 0.220 sec
+2016-02-29 18:59:30,444     Finished tool sample_R1_001.fastq.collapsedaln
+2016-02-29 18:59:30,444     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
+2016-02-29 18:59:30,651     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
+2016-02-29 18:59:30,652     sample1_R2_001.fastq.p2aln STDERR: [main] Real time: 0.040 sec; CPU: 0.042 sec
+2016-02-29 18:59:30,652     Finished tool sample1_R2_001.fastq.p2aln
+2016-02-29 18:59:30,652     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
+2016-02-29 18:59:31,065     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+2016-02-29 18:59:31,065     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+2016-02-29 18:59:31,065     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+2016-02-29 18:59:31,065     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+2016-02-29 18:59:31,065     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+2016-02-29 18:59:31,065     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] calculate SA coordinate... 0.20 sec
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] 18947 sequences have been processed.
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
+2016-02-29 18:59:31,066     sample1_R1_001.fastq.collapsedaln STDERR: [main] Real time: 0.274 sec; CPU: 0.271 sec
+2016-02-29 18:59:31,066     Finished tool sample1_R1_001.fastq.collapsedaln
+2016-02-29 18:59:31,066     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
+2016-02-29 18:59:31,274     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
+2016-02-29 18:59:31,275     sample1_R1_001.fastq.p1aln STDERR: [main] Real time: 0.038 sec; CPU: 0.040 sec
+2016-02-29 18:59:31,275     Finished tool sample1_R1_001.fastq.p1aln
+2016-02-29 18:59:31,276     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] convert to sequence coordinate...
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] (25, 50, 75) percentile: (149, 156, 175)
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] low and high boundaries: 97 and 227 for estimating avg and std
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred external isize from 144 pairs: 161.688 +/- 17.879
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] skewness: 1.244; kurtosis: 0.920; ap_prior: 6.73e-05
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred maximum insert size: 259 (5.42 sigma)
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] changing coordinates of 0 alignments.
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] align unmapped mate...
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 13 out of 16 Q17 singletons are mated.
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 0 out of 1 Q17 discordant pairs are fixed.
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] refine gapped alignments... 0.00 sec
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] print alignments... 0.00 sec
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] 592 sequences have been processed.
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [main] CMD: bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1.sai sample_R2_001.fastq.p2.sai sample_R1_001.fastq.p1 sample_R2_001.fastq.p2
+2016-02-29 18:59:31,482     sample_R1_001.fastq.p1.samse STDERR: [main] Real time: 0.038 sec; CPU: 0.041 sec
+2016-02-29 18:59:31,482     Finished tool sample_R1_001.fastq.p1.samse
+2016-02-29 18:59:31,483     command = bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1.sai sample_R2_001.fastq.p2.sai sample_R1_001.fastq.p1 sample_R2_001.fastq.p2
+2016-02-29 18:59:31,689     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] convert to sequence coordinate... 0.01 sec
+2016-02-29 18:59:31,689     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] refine gapped alignments... 0.00 sec
+2016-02-29 18:59:31,689     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] print alignments... 0.02 sec
+2016-02-29 18:59:31,689     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] 18947 sequences have been processed.
+2016-02-29 18:59:31,689     sample_R1_001.fastq.collapsed.samse STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:31,690     sample_R1_001.fastq.collapsed.samse STDERR: [main] CMD: bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
+2016-02-29 18:59:31,690     sample_R1_001.fastq.collapsed.samse STDERR: [main] Real time: 0.090 sec; CPU: 0.087 sec
+2016-02-29 18:59:31,690     Finished tool sample_R1_001.fastq.collapsed.samse
+2016-02-29 18:59:31,690     command = bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
+2016-02-29 18:59:31,901     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] convert to sequence coordinate... 0.01 sec
+2016-02-29 18:59:31,901     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] refine gapped alignments... 0.01 sec
+2016-02-29 18:59:31,902     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] print alignments... 0.03 sec
+2016-02-29 18:59:31,902     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] 18947 sequences have been processed.
+2016-02-29 18:59:31,902     sample1_R1_001.fastq.collapsed.samse STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:31,902     sample1_R1_001.fastq.collapsed.samse STDERR: [main] CMD: bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
+2016-02-29 18:59:31,902     sample1_R1_001.fastq.collapsed.samse STDERR: [main] Real time: 0.148 sec; CPU: 0.147 sec
+2016-02-29 18:59:31,902     Finished tool sample1_R1_001.fastq.collapsed.samse
+2016-02-29 18:59:31,902     command = bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] convert to sequence coordinate...
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] (25, 50, 75) percentile: (149, 156, 175)
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] low and high boundaries: 97 and 227 for estimating avg and std
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred external isize from 144 pairs: 161.688 +/- 17.879
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] skewness: 1.244; kurtosis: 0.920; ap_prior: 6.73e-05
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred maximum insert size: 259 (5.42 sigma)
+2016-02-29 18:59:32,113     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] changing coordinates of 0 alignments.
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] align unmapped mate...
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 13 out of 16 Q17 singletons are mated.
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 0 out of 1 Q17 discordant pairs are fixed.
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] refine gapped alignments... 0.00 sec
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] print alignments... 0.00 sec
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] 592 sequences have been processed.
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [main] Version: 0.7.12-r1039
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [main] CMD: bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1.sai sample1_R2_001.fastq.p2.sai sample1_R1_001.fastq.p1 sample1_R2_001.fastq.p2
+2016-02-29 18:59:32,114     sample1_R1_001.fastq.p1.samse STDERR: [main] Real time: 0.060 sec; CPU: 0.064 sec
+2016-02-29 18:59:32,114     Finished tool sample1_R1_001.fastq.p1.samse
+2016-02-29 18:59:32,114     command = bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1.sai sample1_R2_001.fastq.p2.sai sample1_R1_001.fastq.p1 sample1_R2_001.fastq.p2
+2016-02-29 18:59:32,114     Pipeline completed successfully !

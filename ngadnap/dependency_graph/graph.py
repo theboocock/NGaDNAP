@@ -123,7 +123,7 @@ class CommandGraph(Graph):
                         total_success += 1 
                 if total_success == len(adjacent_nodes): 
                     commands_to_run.append(node)
-        print([str(o) for o in commands_to_run])
+        #print([str(o) for o in commands_to_run])
         return commands_to_run 
 
         
@@ -138,6 +138,8 @@ class CommandGraph(Graph):
             self.job_queue.add_job(self.node_list[command])
 
     def _finished(self):
+        # Check that the job queue has not died
+        self.job_queue
         nodes = super(CommandGraph, self).nodes()
         successes = sum([self.node_list[node].success for node in self.node_list.keys()])
         if successes == len(nodes):

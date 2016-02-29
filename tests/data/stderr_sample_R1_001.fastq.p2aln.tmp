@@ -1,0 +1,10 @@
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 34bp reads: max_diff = 3
+[bwa_aln] 58bp reads: max_diff = 4
+[bwa_aln] 86bp reads: max_diff = 5
+[bwa_aln] 116bp reads: max_diff = 6
+[bwa_aln] 147bp reads: max_diff = 7
+[bwa_aln] 180bp reads: max_diff = 8
+[bwa_aln] 213bp reads: max_diff = 9
+[bwa_aln] 248bp reads: max_diff = 10
+[bwa_seq_open] fail to open file 'sample_R1_001.fastq.p2' : No such file or directory

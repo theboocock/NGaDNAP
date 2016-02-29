@@ -93,3 +93,4 @@ class JobQueue(object):
             Blocks until the queue is empty  
         """
         return self._queue.join()
+
