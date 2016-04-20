@@ -51,10 +51,10 @@ class CreateNGaDNAPGraph(object):
                 self.add_node(bwa_node, [tmp_node1])
                 bwa_samse1 = bwa_samse(args, config, bwa_node.stdout, fq1 + '.collapsed') 
                 self.add_node(bwa_samse1, [bwa_node])
-                sam_files[bwa_samse1.stdout] = bwa_samse1
-                # Mark duplicates 
-
-                # Rescale if needed 
+                picard_md_one = picard_md(args,config, bwa_samse1.stdout)
+                # Add node
+                self.add_node(picard_md_one, [bwa_node])
+                
                 if args.use_unmerged_reads:  
                     bwa_node2 = bwa_aln(args, config, fq1 + '.p1')
                     self.add_node(bwa_node2, [tmp_node1])
@@ -63,8 +63,8 @@ class CreateNGaDNAPGraph(object):
                     bwa_samse2 = bwa_sampe(args, config, 
                                            bwa_node2.stdout, bwa_node3.stdout,
                                            fq1 + '.p1', fq2 + '.p2')
+                
                     # Mark duplicates 
-
                     # Rescale if needed
                 # Then create the dependencies between bwa and adapter, don't need dependencies for the other jobs.
        

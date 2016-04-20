@@ -17,7 +17,7 @@ __PICARD__="""
 """
 
 __PY_SCRIPT__="""
-{0}/filterUniqueBam.py {1}
+python {0}/filterUniqueBam.py --remove-duplicates {1}
 """ 
 
 from ngadnap.dependency_graph.graph import CommandNode 
@@ -30,5 +30,13 @@ def picard_md(args, config, bam_file):
     cmd=__PICARD__.format(config['java']['executable'], config['picard']['jar'], bam_file, bam_out_name, metrics)
     return CommandNode(cmd, id_string, bam_out_name, args.temp_directory) 
 
-def filter_unique_bam(args, config):
-    return None
+def filter_unique_bam(args, config, bam_file):
+    """
+        Run filter unique bam script
+
+    """
+    bam_prefix= bam_file.split('.bam')[0]
+    bam_out_name = bam_prefix +".unique.bam"
+    id_string = bam_out_name +"_filter_unique_bam"
+    cmd = __PY_SCRIPT__.format(config['unique_bam']['script'], bam_file) 
+    return CommandNode(cmd, id_string, bam_out_name, args.temp_directory)
