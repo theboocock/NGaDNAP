@@ -52,7 +52,8 @@ def parse_arguments():
     parser.add_argument('-l','--log-file', dest="log_file", default="pipeline_run.log", 
                         help="Log file for the ancient DNA pipeline")
     parser.add_argument("-a","--ancient-dna", dest="ancient_dna",
-                        help="Ancient or modern DNA", action="store_false", default=True) 
+                        help="Ancient or modern DNA", action="store_true", default=True) 
+    parser.add_argument('--use-map-damage', dest="no_map_damage", action="store_false", default=True) 
     parser.add_argument("fastq_files", nargs="*",help="Unzipped fastq files in the following format \
                         <SAMPLEID>.*.R1.fastq <SAMPLEID>.*.R2.fastq") 
     parser.add_argument('-c','--config-file', dest="config_file", 
@@ -87,7 +88,7 @@ def parse_arguments():
     sample_qc.add_argument("--min-sample-coverage-percent", help="Minimum sample coverage (percentage)", 
                            dest="min_coverage_percent", default=0.95)
     ancient_filter.add_argument('--downweight-number', help="Number of C->T transitions at start and G->A transitions at the end of read to downweight",
-                                dest="ancient_downweight_number" ,default=2) 
+                                dest="ancient_downweight_number" ,default="2") 
     variant_calling.add_argument('--min-depth',help="Minimum variant read-depth",
                                 dest="vcf_minimum_depth", default=2)
     variant_calling.add_argument('--min-mapping-quality', help="Minimum mapping quality",
@@ -114,7 +115,7 @@ def main():
     args = parse_arguments()
     config = parse_config(args)
     set_environment(config['environment'])
-    logging.basicConfig(format='%(asctime)s     %(message)s',
+    logging.basicConfig(format='%(levelname)s   %(asctime)s     %(message)s',
                         filename=args.log_file, filemode='w',
                         level=args.level)
     check_paths(config)

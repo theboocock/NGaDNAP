@@ -87,7 +87,7 @@ def parse_args(argv):
 
 def main(argv):
     args = parse_args(argv)
-
+    print args
     if args.input == "-" and sys.stdin.isatty():
         sys.stderr.write("STDIN is a terminal, terminating!\n")
         return 1

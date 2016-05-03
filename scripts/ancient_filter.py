@@ -1,3 +1,15 @@
+#!/usr/bin/env python
+#|
+#| Downweight bases that are cytosines
+#|
+#| 
+#| Works to perform a C->T transition
+#| and a G->A transition
+#|
+#| @author James Boocock
+#| @date 12/09/2014
+#|
+
 from Bio import SeqIO
 import argparse
 
@@ -34,6 +46,7 @@ def filter_fastq(input_file,output_file,downweight_number,ctot,gtoa):
     """
         Takes a Fastq file as input and weights the quality of the bases down
         at the start and the end of the reads.
+
     """
     in_iterator = SeqIO.parse(input_file,'fastq') 
     input_records=list(in_iterator)
@@ -54,7 +67,9 @@ import pysam
 def filter_bam(input_file, output_file, downweight_number, ctot, gtoa):
     """
         Takes a bam file as input and weights the quality of the reads down.
+
         Need to ensure we write the header out :)
+
         Investigate pysam and look for a header,
         this should really help us understand how to get this bam filter working 
         and writing the bam files directly back out to the terminal.
@@ -73,4 +88,23 @@ def filter_bam(input_file, output_file, downweight_number, ctot, gtoa):
         new_qual = downweight_quality(qual,change_bases_c, change_bases_t)
         line.qual = new_qual
         bam_out.write(line)
+   
+        
+def main():
+    parser = argparse.ArgumentParser(description='Downweight cytosine bases.')
+    parser.add_argument('-d','--downweight-number',dest='downweight',help='Downweight', default=int(2))
+    parser.add_argument('-c','--c2t',dest='ctot',action='store_true',help='Filter C to T transitions at the start of reads', default=False)
+    parser.add_argument('-g','--g2a',dest='gtoa',action='store_true',help='Filter G to A transitions at the end of reads', default=False)
+    parser.add_argument('-i','--input-file',dest='input_file',help='Input File - input_fastq' )
+    parser.add_argument('-o','--output-file',dest='output_file', help='Output File - out_fastq') 
+    parser.add_argument('-f','--format',dest='format', help="File format fastq or bam",default="fastq")
+    args = parser.parse_args()
+    args.downweight = int(args.downweight)
+    assert (args.ctot or args.gtoa), "One of --c2t or g2a needs to be set"
+    if (args.format == 'fastq'):
+        filter_fastq(args.input_file, args.output_file, args.downweight, args.ctot, args.gtoa)
+    elif (args.format == 'bam'):
+        filter_bam(args.input_file, args.output_file, args.downweight, args.ctot, args.gtoa)
 
+if __name__ == "__main__":
+    main()

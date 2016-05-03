@@ -1,0 +1,15 @@
+[Tue Apr 26 15:54:38 NZST 2016] picard.sam.markduplicates.MarkDuplicates INPUT=[sample_R1_001.fastq.collapsed.sam] OUTPUT=sample_R1_001.fastq.collapsed.sam.md.bam METRICS_FILE=sample_R1_001.fastq.collapsed.sammarkdup.txt    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 REMOVE_DUPLICATES=false ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=[a-zA-Z0-9]+:[0-9]:([0-9]+):([0-9]+):([0-9]+).* OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Apr 26 15:54:38 NZST 2016] Executing as smilefreak@Jamess-MBP-2.staff.uod.otago.ac.nz on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO	2016-04-26 15:54:38	MarkDuplicates	Start of doWork freeMemory: 254716080; totalMemory: 257425408; maxMemory: 3817865216
+INFO	2016-04-26 15:54:38	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2016-04-26 15:54:38	MarkDuplicates	Will retain up to 14684096 data points before spilling to disk.
+[Tue Apr 26 15:54:39 NZST 2016] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.02 minutes.
+Runtime.totalMemory()=257425408
+To get help, see http://broadinstitute.github.io/picard/index.html#GettingHelp
+Exception in thread "main" picard.PicardException: Input file sample_R1_001.fastq.collapsed.sam is not coordinate sorted.
+	at picard.sam.markduplicates.util.AbstractMarkDuplicatesCommandLineProgram.openInputs(AbstractMarkDuplicatesCommandLineProgram.java:208)
+	at picard.sam.markduplicates.MarkDuplicates.buildSortedReadEndLists(MarkDuplicates.java:291)
+	at picard.sam.markduplicates.MarkDuplicates.doWork(MarkDuplicates.java:139)
+	at picard.cmdline.CommandLineProgram.instanceMain(CommandLineProgram.java:209)
+	at picard.cmdline.PicardCommandLine.instanceMain(PicardCommandLine.java:95)
+	at picard.cmdline.PicardCommandLine.main(PicardCommandLine.java:105)

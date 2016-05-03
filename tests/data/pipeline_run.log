@@ -1,128 +1,330 @@
-2016-04-20 14:34:16,630     Creating Job Queue
-2016-04-20 14:34:16,630     Success
-2016-04-20 14:34:16,630     Started populating Job Graph
-2016-04-20 14:34:19,066     Finished tool sample_R1_001.fastq.adapter_removal
-2016-04-20 14:34:19,066     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R2_001.fastq --outputstats sample_R1_001.fastq.stats --trimns --outputcollapsed sample_R1_001.fastq.collapsed --minlength 25 --output1 sample_R1_001.fastq.p1 --output2 sample_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
-2016-04-20 14:34:21,518     Finished tool sample1_R1_001.fastq.adapter_removal
-2016-04-20 14:34:21,518     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R2_001.fastq --outputstats sample1_R1_001.fastq.stats --trimns --outputcollapsed sample1_R1_001.fastq.collapsed --minlength 25 --output1 sample1_R1_001.fastq.p1 --output2 sample1_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
-2016-04-20 14:34:21,728     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
-2016-04-20 14:34:21,728     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
-2016-04-20 14:34:21,728     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
-2016-04-20 14:34:21,728     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
-2016-04-20 14:34:21,728     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
-2016-04-20 14:34:21,728     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] 592 sequences have been processed.
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
-2016-04-20 14:34:21,729     sample_R1_001.fastq.p1aln STDERR: [main] Real time: 0.036 sec; CPU: 0.039 sec
-2016-04-20 14:34:21,729     Finished tool sample_R1_001.fastq.p1aln
-2016-04-20 14:34:21,729     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
-2016-04-20 14:34:21,936     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
-2016-04-20 14:34:21,936     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] 592 sequences have been processed.
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:21,937     sample_R2_001.fastq.p2aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
-2016-04-20 14:34:21,938     sample_R2_001.fastq.p2aln STDERR: [main] Real time: 0.036 sec; CPU: 0.039 sec
-2016-04-20 14:34:21,938     Finished tool sample_R2_001.fastq.p2aln
-2016-04-20 14:34:21,938     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 17bp reads: max_diff = 2
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 34bp reads: max_diff = 3
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 58bp reads: max_diff = 4
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 86bp reads: max_diff = 5
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 116bp reads: max_diff = 6
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 147bp reads: max_diff = 7
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 180bp reads: max_diff = 8
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 213bp reads: max_diff = 9
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 248bp reads: max_diff = 10
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] calculate SA coordinate... 0.14 sec
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] 18947 sequences have been processed.
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
-2016-04-20 14:34:22,146     sample_R1_001.fastq.collapsedaln STDERR: [main] Real time: 0.196 sec; CPU: 0.197 sec
-2016-04-20 14:34:22,146     Finished tool sample_R1_001.fastq.collapsedaln
-2016-04-20 14:34:22,146     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
-2016-04-20 14:34:22,351     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] 592 sequences have been processed.
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
-2016-04-20 14:34:22,352     sample1_R2_001.fastq.p2aln STDERR: [main] Real time: 0.036 sec; CPU: 0.038 sec
-2016-04-20 14:34:22,352     Finished tool sample1_R2_001.fastq.p2aln
-2016-04-20 14:34:22,352     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
-2016-04-20 14:34:22,561     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 17bp reads: max_diff = 2
-2016-04-20 14:34:22,561     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 34bp reads: max_diff = 3
-2016-04-20 14:34:22,561     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 58bp reads: max_diff = 4
-2016-04-20 14:34:22,561     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 86bp reads: max_diff = 5
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 116bp reads: max_diff = 6
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 147bp reads: max_diff = 7
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 180bp reads: max_diff = 8
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 213bp reads: max_diff = 9
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 248bp reads: max_diff = 10
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] calculate SA coordinate... 0.14 sec
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] 18947 sequences have been processed.
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
-2016-04-20 14:34:22,562     sample1_R1_001.fastq.collapsedaln STDERR: [main] Real time: 0.186 sec; CPU: 0.188 sec
-2016-04-20 14:34:22,562     Finished tool sample1_R1_001.fastq.collapsedaln
-2016-04-20 14:34:22,562     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
-2016-04-20 14:34:22,770     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] 592 sequences have been processed.
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
-2016-04-20 14:34:22,771     sample1_R1_001.fastq.p1aln STDERR: [main] Real time: 0.037 sec; CPU: 0.039 sec
-2016-04-20 14:34:22,771     Finished tool sample1_R1_001.fastq.p1aln
-2016-04-20 14:34:22,771     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
-2016-04-20 14:34:22,980     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] convert to sequence coordinate... 0.01 sec
-2016-04-20 14:34:22,980     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] refine gapped alignments... 0.00 sec
-2016-04-20 14:34:22,980     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] print alignments... 0.02 sec
-2016-04-20 14:34:22,980     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] 18947 sequences have been processed.
-2016-04-20 14:34:22,981     sample_R1_001.fastq.collapsed.samse STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:22,981     sample_R1_001.fastq.collapsed.samse STDERR: [main] CMD: bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
-2016-04-20 14:34:22,981     sample_R1_001.fastq.collapsed.samse STDERR: [main] Real time: 0.094 sec; CPU: 0.092 sec
-2016-04-20 14:34:22,981     Finished tool sample_R1_001.fastq.collapsed.samse
-2016-04-20 14:34:22,981     command = bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
-2016-04-20 14:34:23,186     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] convert to sequence coordinate... 0.01 sec
-2016-04-20 14:34:23,187     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] refine gapped alignments... 0.00 sec
-2016-04-20 14:34:23,187     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] print alignments... 0.02 sec
-2016-04-20 14:34:23,187     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] 18947 sequences have been processed.
-2016-04-20 14:34:23,187     sample1_R1_001.fastq.collapsed.samse STDERR: [main] Version: 0.7.12-r1039
-2016-04-20 14:34:23,187     sample1_R1_001.fastq.collapsed.samse STDERR: [main] CMD: bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
-2016-04-20 14:34:23,187     sample1_R1_001.fastq.collapsed.samse STDERR: [main] Real time: 0.086 sec; CPU: 0.084 sec
-2016-04-20 14:34:23,187     Finished tool sample1_R1_001.fastq.collapsed.samse
-2016-04-20 14:34:23,187     command = bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
-2016-04-20 14:34:23,187     Pipeline completed successfully !
+INFO   2016-05-03 16:14:56,915     Creating Job Queue
+INFO   2016-05-03 16:14:56,915     Success
+INFO   2016-05-03 16:14:56,916     Started populating Alignments Graph
+INFO   2016-05-03 16:14:56,917     sample_R1_001.fastq.adapter_removal preparing to run /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R2_001.fastq --outputstats sample_R1_001.fastq.stats --trimns --outputcollapsed sample_R1_001.fastq.collapsed --minlength 25 --output1 sample_R1_001.fastq.p1 --output2 sample_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
+INFO   2016-05-03 16:14:56,918     sample1_R1_001.fastq.adapter_removal preparing to run /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R2_001.fastq --outputstats sample1_R1_001.fastq.stats --trimns --outputcollapsed sample1_R1_001.fastq.collapsed --minlength 25 --output1 sample1_R1_001.fastq.p1 --output2 sample1_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
+INFO   2016-05-03 16:14:59,357     Finished tool sample1_R1_001.fastq.adapter_removal
+DEBUG   2016-05-03 16:14:59,358     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample1_R2_001.fastq --outputstats sample1_R1_001.fastq.stats --trimns --outputcollapsed sample1_R1_001.fastq.collapsed --minlength 25 --output1 sample1_R1_001.fastq.p1 --output2 sample1_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
+INFO   2016-05-03 16:14:59,358     Finished tool sample_R1_001.fastq.adapter_removal
+DEBUG   2016-05-03 16:14:59,358     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/AdapterRemoval/AdapterRemoval-1.5.4/AdapterRemoval --collapse --file1 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R1_001.fastq --file2 /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/sample_R2_001.fastq --outputstats sample_R1_001.fastq.stats --trimns --outputcollapsed sample_R1_001.fastq.collapsed --minlength 25 --output1 sample_R1_001.fastq.p1 --output2 sample_R2_001.fastq.p2 --mm 3 --minquality 20 --minalignmentlength 11 --trimqualities
+INFO   2016-05-03 16:14:59,360     sample1_R1_001.fastq.collapsedaln preparing to run bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,361     sample1_R1_001.fastq.p1aln preparing to run bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
+INFO   2016-05-03 16:14:59,361     sample1_R2_001.fastq.p2aln preparing to run bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,361     sample_R1_001.fastq.p1aln preparing to run bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,414     sample1_R2_001.fastq.p2aln STDERR: [main] Real time: 0.039 sec; CPU: 0.041 sec
+INFO   2016-05-03 16:14:59,415     Finished tool sample1_R2_001.fastq.p2aln
+DEBUG   2016-05-03 16:14:59,415     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,415     sample_R2_001.fastq.p2aln preparing to run bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,568     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+INFO   2016-05-03 16:14:59,568     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+INFO   2016-05-03 16:14:59,568     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+INFO   2016-05-03 16:14:59,568     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] calculate SA coordinate... 0.13 sec
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] 18947 sequences have been processed.
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,569     sample1_R1_001.fastq.collapsedaln STDERR: [main] Real time: 0.181 sec; CPU: 0.183 sec
+INFO   2016-05-03 16:14:59,569     Finished tool sample1_R1_001.fastq.collapsedaln
+DEBUG   2016-05-03 16:14:59,569     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,570     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+INFO   2016-05-03 16:14:59,570     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+INFO   2016-05-03 16:14:59,570     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+INFO   2016-05-03 16:14:59,571     sample_R1_001.fastq.collapsedaln preparing to run bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,571     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+INFO   2016-05-03 16:14:59,571     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+INFO   2016-05-03 16:14:59,571     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+INFO   2016-05-03 16:14:59,571     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
+INFO   2016-05-03 16:14:59,573     sample1_R1_001.fastq.p1aln STDERR: [main] Real time: 0.040 sec; CPU: 0.043 sec
+INFO   2016-05-03 16:14:59,574     Finished tool sample1_R1_001.fastq.p1aln
+DEBUG   2016-05-03 16:14:59,574     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1
+INFO   2016-05-03 16:14:59,574     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+INFO   2016-05-03 16:14:59,574     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+INFO   2016-05-03 16:14:59,574     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+INFO   2016-05-03 16:14:59,576     sample1_R1_001.fastq.collapsed.samse preparing to run bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+INFO   2016-05-03 16:14:59,576     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+INFO   2016-05-03 16:14:59,577     sample_R1_001.fastq.p1aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+INFO   2016-05-03 16:14:59,578     sample_R1_001.fastq.p1aln STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,578     sample_R1_001.fastq.p1aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
+INFO   2016-05-03 16:14:59,578     sample_R1_001.fastq.p1aln STDERR: [main] Real time: 0.038 sec; CPU: 0.041 sec
+INFO   2016-05-03 16:14:59,578     Finished tool sample_R1_001.fastq.p1aln
+DEBUG   2016-05-03 16:14:59,578     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1
+INFO   2016-05-03 16:14:59,580     sample1_R1_001.fastq.p1.samse preparing to run bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1.sai sample1_R2_001.fastq.p2.sai sample1_R1_001.fastq.p1 sample1_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] calculate SA coordinate... 0.01 sec
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+INFO   2016-05-03 16:14:59,619     sample_R2_001.fastq.p2aln STDERR: [bwa_aln_core] 592 sequences have been processed.
+INFO   2016-05-03 16:14:59,620     sample_R2_001.fastq.p2aln STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,620     sample_R2_001.fastq.p2aln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,620     sample_R2_001.fastq.p2aln STDERR: [main] Real time: 0.035 sec; CPU: 0.037 sec
+INFO   2016-05-03 16:14:59,620     Finished tool sample_R2_001.fastq.p2aln
+DEBUG   2016-05-03 16:14:59,620     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,621     sample_R1_001.fastq.p1.samse preparing to run bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1.sai sample_R2_001.fastq.p2.sai sample_R1_001.fastq.p1 sample_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 17bp reads: max_diff = 2
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 34bp reads: max_diff = 3
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 58bp reads: max_diff = 4
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 86bp reads: max_diff = 5
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 116bp reads: max_diff = 6
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 147bp reads: max_diff = 7
+INFO   2016-05-03 16:14:59,780     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 180bp reads: max_diff = 8
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 213bp reads: max_diff = 9
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln] 248bp reads: max_diff = 10
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] calculate SA coordinate... 0.14 sec
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] write to the disk... 0.00 sec
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [bwa_aln_core] 18947 sequences have been processed.
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [main] CMD: bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,781     sample_R1_001.fastq.collapsedaln STDERR: [main] Real time: 0.187 sec; CPU: 0.189 sec
+INFO   2016-05-03 16:14:59,781     Finished tool sample_R1_001.fastq.collapsedaln
+DEBUG   2016-05-03 16:14:59,781     command = bwa aln -t 1 -n 0.03 -o 2 /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,782     sample_R1_001.fastq.collapsed.samse preparing to run bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,785     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] convert to sequence coordinate... 0.01 sec
+INFO   2016-05-03 16:14:59,786     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] refine gapped alignments... 0.00 sec
+INFO   2016-05-03 16:14:59,786     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] print alignments... 0.02 sec
+INFO   2016-05-03 16:14:59,786     sample1_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] 18947 sequences have been processed.
+INFO   2016-05-03 16:14:59,786     sample1_R1_001.fastq.collapsed.samse STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,786     sample1_R1_001.fastq.collapsed.samse STDERR: [main] CMD: bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,786     sample1_R1_001.fastq.collapsed.samse STDERR: [main] Real time: 0.087 sec; CPU: 0.084 sec
+INFO   2016-05-03 16:14:59,786     Finished tool sample1_R1_001.fastq.collapsed.samse
+DEBUG   2016-05-03 16:14:59,786     command = bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.collapsed.sai sample1_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,787     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] convert to sequence coordinate...
+INFO   2016-05-03 16:14:59,787     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] (25, 50, 75) percentile: (149, 156, 175)
+INFO   2016-05-03 16:14:59,788     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] low and high boundaries: 97 and 227 for estimating avg and std
+INFO   2016-05-03 16:14:59,788     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample1_R1_001.fastq.collapsed.sam O=sample1_R1_001.fastq.collapsed.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:14:59,788     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred external isize from 144 pairs: 161.688 +/- 17.879
+INFO   2016-05-03 16:14:59,789     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] skewness: 1.244; kurtosis: 0.920; ap_prior: 6.73e-05
+INFO   2016-05-03 16:14:59,789     sample1_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred maximum insert size: 259 (5.42 sigma)
+INFO   2016-05-03 16:14:59,789     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+INFO   2016-05-03 16:14:59,789     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] changing coordinates of 0 alignments.
+INFO   2016-05-03 16:14:59,790     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] align unmapped mate...
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 13 out of 16 Q17 singletons are mated.
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 0 out of 1 Q17 discordant pairs are fixed.
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] refine gapped alignments... 0.00 sec
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] print alignments... 0.00 sec
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] 592 sequences have been processed.
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [main] CMD: bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1.sai sample1_R2_001.fastq.p2.sai sample1_R1_001.fastq.p1 sample1_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,791     sample1_R1_001.fastq.p1.samse STDERR: [main] Real time: 0.035 sec; CPU: 0.037 sec
+INFO   2016-05-03 16:14:59,791     Finished tool sample1_R1_001.fastq.p1.samse
+DEBUG   2016-05-03 16:14:59,791     command = bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample1_R1_001.fastq.p1.sai sample1_R2_001.fastq.p2.sai sample1_R1_001.fastq.p1 sample1_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,793     sample1_R1_001.fastq.p1.sort.bam_sort_sam preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample1_R1_001.fastq.p1.sam O=sample1_R1_001.fastq.p1.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] convert to sequence coordinate...
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] (25, 50, 75) percentile: (149, 156, 175)
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] low and high boundaries: 97 and 227 for estimating avg and std
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred external isize from 144 pairs: 161.688 +/- 17.879
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] skewness: 1.244; kurtosis: 0.920; ap_prior: 6.73e-05
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [infer_isize] inferred maximum insert size: 259 (5.42 sigma)
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] changing coordinates of 0 alignments.
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] align unmapped mate...
+INFO   2016-05-03 16:14:59,827     sample_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 13 out of 16 Q17 singletons are mated.
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [bwa_paired_sw] 0 out of 1 Q17 discordant pairs are fixed.
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] time elapses: 0.00 sec
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] refine gapped alignments... 0.00 sec
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] print alignments... 0.00 sec
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [bwa_sai2sam_pe_core] 592 sequences have been processed.
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [main] CMD: bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1.sai sample_R2_001.fastq.p2.sai sample_R1_001.fastq.p1 sample_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,828     sample_R1_001.fastq.p1.samse STDERR: [main] Real time: 0.034 sec; CPU: 0.036 sec
+INFO   2016-05-03 16:14:59,828     Finished tool sample_R1_001.fastq.p1.samse
+DEBUG   2016-05-03 16:14:59,828     command = bwa sampe /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.p1.sai sample_R2_001.fastq.p2.sai sample_R1_001.fastq.p1 sample_R2_001.fastq.p2
+INFO   2016-05-03 16:14:59,829     sample_R1_001.fastq.p1.sort.bam_sort_sam preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample_R1_001.fastq.p1.sam O=sample_R1_001.fastq.p1.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] convert to sequence coordinate... 0.01 sec
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] refine gapped alignments... 0.00 sec
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] print alignments... 0.02 sec
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [bwa_aln_core] 18947 sequences have been processed.
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [main] Version: 0.7.12-r1039
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [main] CMD: bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,990     sample_R1_001.fastq.collapsed.samse STDERR: [main] Real time: 0.100 sec; CPU: 0.096 sec
+INFO   2016-05-03 16:14:59,990     Finished tool sample_R1_001.fastq.collapsed.samse
+DEBUG   2016-05-03 16:14:59,991     command = bwa samse /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa sample_R1_001.fastq.collapsed.sai sample_R1_001.fastq.collapsed
+INFO   2016-05-03 16:14:59,992     sample_R1_001.fastq.collapsed.sort.bam_sort_sam preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample_R1_001.fastq.collapsed.sam O=sample_R1_001.fastq.collapsed.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] picard.sam.SortSam INPUT=sample1_R1_001.fastq.p1.sam OUTPUT=sample1_R1_001.fastq.p1.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT    VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: INFO	2016-05-03 16:15:00	SortSam	Finished reading inputs, merging and writing to output now.
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] picard.sam.SortSam done. Elapsed time: 0.01 minutes.
+INFO   2016-05-03 16:15:00,614     sample1_R1_001.fastq.p1.sort.bam_sort_sam STDERR: Runtime.totalMemory()=257425408
+INFO   2016-05-03 16:15:00,614     Finished tool sample1_R1_001.fastq.p1.sort.bam_sort_sam
+DEBUG   2016-05-03 16:15:00,614     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample1_R1_001.fastq.p1.sam O=sample1_R1_001.fastq.p1.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:00,615     sample1_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam preparing to run python /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//filterUniqueBam.py --remove-duplicates sample1_R1_001.fastq.p1.sort.bam
+INFO   2016-05-03 16:15:00,640     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] picard.sam.SortSam INPUT=sample_R1_001.fastq.p1.sam OUTPUT=sample_R1_001.fastq.p1.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT    VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:00,640     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:00,640     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,640     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,640     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,640     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:00,641     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: INFO	2016-05-03 16:15:00	SortSam	Finished reading inputs, merging and writing to output now.
+INFO   2016-05-03 16:15:00,641     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] picard.sam.SortSam done. Elapsed time: 0.01 minutes.
+INFO   2016-05-03 16:15:00,641     sample_R1_001.fastq.p1.sort.bam_sort_sam STDERR: Runtime.totalMemory()=257425408
+INFO   2016-05-03 16:15:00,641     Finished tool sample_R1_001.fastq.p1.sort.bam_sort_sam
+DEBUG   2016-05-03 16:15:00,641     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample_R1_001.fastq.p1.sam O=sample_R1_001.fastq.p1.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:00,642     sample_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam preparing to run python /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//filterUniqueBam.py --remove-duplicates sample_R1_001.fastq.p1.sort.bam
+INFO   2016-05-03 16:15:00,823     sample1_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam STDERR: close failed in file object destructor:
+INFO   2016-05-03 16:15:00,823     sample1_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam STDERR: sys.excepthook is missing
+INFO   2016-05-03 16:15:00,823     sample1_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam STDERR: lost sys.stderr
+INFO   2016-05-03 16:15:00,823     Finished tool sample1_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam
+DEBUG   2016-05-03 16:15:00,823     command = python /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//filterUniqueBam.py --remove-duplicates sample1_R1_001.fastq.p1.sort.bam
+INFO   2016-05-03 16:15:00,851     sample_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam STDERR: close failed in file object destructor:
+INFO   2016-05-03 16:15:00,851     sample_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam STDERR: sys.excepthook is missing
+INFO   2016-05-03 16:15:00,851     sample_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam STDERR: lost sys.stderr
+INFO   2016-05-03 16:15:00,851     Finished tool sample_R1_001.fastq.p1.sort.unique.bam_filter_unique_bam
+DEBUG   2016-05-03 16:15:00,851     command = python /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//filterUniqueBam.py --remove-duplicates sample_R1_001.fastq.p1.sort.bam
+INFO   2016-05-03 16:15:01,211     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] picard.sam.SortSam INPUT=sample1_R1_001.fastq.collapsed.sam OUTPUT=sample1_R1_001.fastq.collapsed.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT    VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:01,211     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Ignoring SAM validation error due to lenient parsing:
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Error parsing text SAM file. MAPQ should be 0 for unmapped read.; File sample1_R1_001.fastq.collapsed.sam; Line 5283
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Line: M_M00933:21:000000000-AB389:1:1111:19188:8774	4	gi|17737322|ref|NC_002008.4|	16726	37	106M	*	0	0	TGGATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTTCGTCTGGGGGGTGTGCACGCGATAGCATTGCGAGACGCTAGAGC	CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJGGGGGGGGGGGGGGGGGGGGGGGGGCCCCC	XT:A:U	NM:i:4	X0:i:1	X1:i:0	XM:i:4	XO:i:0	XG:i:0	MD:Z:0A0A72A26G4
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Ignoring SAM validation error due to lenient parsing:
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Error parsing text SAM file. MAPQ should be 0 for unmapped read.; File sample1_R1_001.fastq.collapsed.sam; Line 12500
+INFO   2016-05-03 16:15:01,212     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Line: M_M00933:21:000000000-AB389:1:2106:8836:18361	4	gi|251831106|ref|NC_012920.1|	16490	25	85M	*	0	0	GTATCTGACATTTGGTTCCTACTTCAGGGTCATAAAGCCTAAATAGCCCACACGTTCCCCTTAAATAAGACATCACGATGGATCA	CCCCCGGGGJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJGGGGCCCCC	XT:A:U	NM:i:4	X0:i:1	X1:i:0	XM:i:4	XO:i:0	XG:i:0	MD:Z:5C5C69T1A1
+INFO   2016-05-03 16:15:01,213     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: INFO	2016-05-03 16:15:00	SortSam	Finished reading inputs, merging and writing to output now.
+INFO   2016-05-03 16:15:01,213     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: [Tue May 03 16:15:01 NZST 2016] picard.sam.SortSam done. Elapsed time: 0.01 minutes.
+INFO   2016-05-03 16:15:01,213     sample1_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Runtime.totalMemory()=257425408
+INFO   2016-05-03 16:15:01,213     Finished tool sample1_R1_001.fastq.collapsed.sort.bam_sort_sam
+DEBUG   2016-05-03 16:15:01,213     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample1_R1_001.fastq.collapsed.sam O=sample1_R1_001.fastq.collapsed.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:01,213     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] picard.sam.SortSam INPUT=sample_R1_001.fastq.collapsed.sam OUTPUT=sample_R1_001.fastq.collapsed.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT    VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:01,213     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: [Tue May 03 16:15:00 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:01,213     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,214     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,214     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,214     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: java.net.UnknownHostException: trace.ncbi.nlm.nih.gov
+INFO   2016-05-03 16:15:01,214     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Ignoring SAM validation error due to lenient parsing:
+INFO   2016-05-03 16:15:01,214     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Error parsing text SAM file. MAPQ should be 0 for unmapped read.; File sample_R1_001.fastq.collapsed.sam; Line 5283
+INFO   2016-05-03 16:15:01,215     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Line: M_M00933:21:000000000-AB389:1:1111:19188:8774	4	gi|17737322|ref|NC_002008.4|	16726	37	106M	*	0	0	TGGATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTTCGTCTGGGGGGTGTGCACGCGATAGCATTGCGAGACGCTAGAGC	CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJGGGGGGGGGGGGGGGGGGGGGGGGGCCCCC	XT:A:U	NM:i:4	X0:i:1	X1:i:0	XM:i:4	XO:i:0	XG:i:0	MD:Z:0A0A72A26G4
+INFO   2016-05-03 16:15:01,215     sample1_R1_001.fastq.collapsed.sort.md.bam_picard preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar MarkDuplicates I=sample1_R1_001.fastq.collapsed.sort.bam O=sample1_R1_001.fastq.collapsed.sort.md.bam M=sample1_R1_001.fastq.collapsed.sortmarkdup.txt VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:01,216     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Ignoring SAM validation error due to lenient parsing:
+INFO   2016-05-03 16:15:01,216     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Error parsing text SAM file. MAPQ should be 0 for unmapped read.; File sample_R1_001.fastq.collapsed.sam; Line 12500
+INFO   2016-05-03 16:15:01,216     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Line: M_M00933:21:000000000-AB389:1:2106:8836:18361	4	gi|251831106|ref|NC_012920.1|	16490	25	85M	*	0	0	GTATCTGACATTTGGTTCCTACTTCAGGGTCATAAAGCCTAAATAGCCCACACGTTCCCCTTAAATAAGACATCACGATGGATCA	CCCCCGGGGJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJGGGGCCCCC	XT:A:U	NM:i:4	X0:i:1	X1:i:0	XM:i:4	XO:i:0	XG:i:0	MD:Z:5C5C69T1A1
+INFO   2016-05-03 16:15:01,216     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: INFO	2016-05-03 16:15:00	SortSam	Finished reading inputs, merging and writing to output now.
+INFO   2016-05-03 16:15:01,217     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: [Tue May 03 16:15:01 NZST 2016] picard.sam.SortSam done. Elapsed time: 0.01 minutes.
+INFO   2016-05-03 16:15:01,218     sample_R1_001.fastq.collapsed.sort.bam_sort_sam STDERR: Runtime.totalMemory()=257425408
+INFO   2016-05-03 16:15:01,218     Finished tool sample_R1_001.fastq.collapsed.sort.bam_sort_sam
+DEBUG   2016-05-03 16:15:01,218     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar SortSam I=sample_R1_001.fastq.collapsed.sam O=sample_R1_001.fastq.collapsed.sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:01,220     sample_R1_001.fastq.collapsed.sort.md.bam_picard preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar MarkDuplicates I=sample_R1_001.fastq.collapsed.sort.bam O=sample_R1_001.fastq.collapsed.sort.md.bam M=sample_R1_001.fastq.collapsed.sortmarkdup.txt VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: [Tue May 03 16:15:01 NZST 2016] picard.sam.markduplicates.MarkDuplicates INPUT=[sample1_R1_001.fastq.collapsed.sort.bam] OUTPUT=sample1_R1_001.fastq.collapsed.sort.md.bam METRICS_FILE=sample1_R1_001.fastq.collapsed.sortmarkdup.txt VALIDATION_STRINGENCY=LENIENT    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 REMOVE_DUPLICATES=false ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=[a-zA-Z0-9]+:[0-9]:([0-9]+):([0-9]+):([0-9]+).* OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: [Tue May 03 16:15:01 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Start of doWork freeMemory: 254709720; totalMemory: 257425408; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Reading input file and constructing read end information.
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Will retain up to 14684096 data points before spilling to disk.
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 9, Read name M_M00933:21:000000000-AB389:1:1111:19188:8774, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 3552, Read name M_M00933:21:000000000-AB389:1:2106:8836:18361, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Read 3565 records. 0 pairs never matched.
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	After buildSortedReadEndLists freeMemory: 259867672; totalMemory: 380633088; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Will retain up to 119308288 duplicate indices before spilling to disk.
+INFO   2016-05-03 16:15:03,241     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Sorting list of duplicate records.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	After generateDuplicateIndexes freeMemory: 411804240; totalMemory: 1369964544; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Marking 1655 records as duplicates.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 9, Read name M_M00933:21:000000000-AB389:1:1111:19188:8774, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 3552, Read name M_M00933:21:000000000-AB389:1:2106:8836:18361, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:03	MarkDuplicates	Before output close freeMemory: 1365855168; totalMemory: 1369964544; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:03	MarkDuplicates	After output close freeMemory: 1365920184; totalMemory: 1369964544; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: [Tue May 03 16:15:03 NZST 2016] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.03 minutes.
+INFO   2016-05-03 16:15:03,242     sample1_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Runtime.totalMemory()=1369964544
+INFO   2016-05-03 16:15:03,242     Finished tool sample1_R1_001.fastq.collapsed.sort.md.bam_picard
+DEBUG   2016-05-03 16:15:03,242     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar MarkDuplicates I=sample1_R1_001.fastq.collapsed.sort.bam O=sample1_R1_001.fastq.collapsed.sort.md.bam M=sample1_R1_001.fastq.collapsed.sortmarkdup.txt VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:03,243     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar AddOrReplaceReadGroups I=sample1_R1_001.fastq.collapsed.sort.md.bam O=sample1_R1_001.fastq.collapsed.sort.md.rg.bam VALIDATION_STRINGENCY=LENIENT RGPL=sample1 RGPU=sample1 RGSM=sample1 RGLB=sample1
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: [Tue May 03 16:15:01 NZST 2016] picard.sam.markduplicates.MarkDuplicates INPUT=[sample_R1_001.fastq.collapsed.sort.bam] OUTPUT=sample_R1_001.fastq.collapsed.sort.md.bam METRICS_FILE=sample_R1_001.fastq.collapsed.sortmarkdup.txt VALIDATION_STRINGENCY=LENIENT    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 REMOVE_DUPLICATES=false ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=[a-zA-Z0-9]+:[0-9]:([0-9]+):([0-9]+):([0-9]+).* OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: [Tue May 03 16:15:01 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Start of doWork freeMemory: 254709856; totalMemory: 257425408; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Reading input file and constructing read end information.
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Will retain up to 14684096 data points before spilling to disk.
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 9, Read name M_M00933:21:000000000-AB389:1:1111:19188:8774, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 3552, Read name M_M00933:21:000000000-AB389:1:2106:8836:18361, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:01	MarkDuplicates	Read 3565 records. 0 pairs never matched.
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	After buildSortedReadEndLists freeMemory: 261439208; totalMemory: 382205952; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Will retain up to 119308288 duplicate indices before spilling to disk.
+INFO   2016-05-03 16:15:03,251     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Sorting list of duplicate records.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	After generateDuplicateIndexes freeMemory: 411834176; totalMemory: 1369964544; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Marking 1655 records as duplicates.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:02	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 9, Read name M_M00933:21:000000000-AB389:1:1111:19188:8774, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Ignoring SAM validation error: ERROR: Record 3552, Read name M_M00933:21:000000000-AB389:1:2106:8836:18361, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:03	MarkDuplicates	Before output close freeMemory: 1365885056; totalMemory: 1369964544; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: INFO	2016-05-03 16:15:03	MarkDuplicates	After output close freeMemory: 1365950072; totalMemory: 1369964544; maxMemory: 3817865216
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: [Tue May 03 16:15:03 NZST 2016] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.03 minutes.
+INFO   2016-05-03 16:15:03,252     sample_R1_001.fastq.collapsed.sort.md.bam_picard STDERR: Runtime.totalMemory()=1369964544
+INFO   2016-05-03 16:15:03,252     Finished tool sample_R1_001.fastq.collapsed.sort.md.bam_picard
+DEBUG   2016-05-03 16:15:03,252     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar MarkDuplicates I=sample_R1_001.fastq.collapsed.sort.bam O=sample_R1_001.fastq.collapsed.sort.md.bam M=sample_R1_001.fastq.collapsed.sortmarkdup.txt VALIDATION_STRINGENCY=LENIENT
+INFO   2016-05-03 16:15:03,253     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam preparing to run java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar AddOrReplaceReadGroups I=sample_R1_001.fastq.collapsed.sort.md.bam O=sample_R1_001.fastq.collapsed.sort.md.rg.bam VALIDATION_STRINGENCY=LENIENT RGPL=sample RGPU=sample RGSM=sample RGLB=sample
+INFO   2016-05-03 16:15:04,057     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: [Tue May 03 16:15:03 NZST 2016] picard.sam.AddOrReplaceReadGroups INPUT=sample1_R1_001.fastq.collapsed.sort.md.bam OUTPUT=sample1_R1_001.fastq.collapsed.sort.md.rg.bam RGLB=sample1 RGPL=sample1 RGPU=sample1 RGSM=sample1 VALIDATION_STRINGENCY=LENIENT    RGID=1 VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:04,057     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: [Tue May 03 16:15:03 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:04,057     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: INFO	2016-05-03 16:15:03	AddOrReplaceReadGroups	Created read group ID=1 PL=sample1 LB=sample1 SM=sample1
+INFO   2016-05-03 16:15:04,057     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: 
+INFO   2016-05-03 16:15:04,058     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: Ignoring SAM validation error: ERROR: Record 9, Read name M_M00933:21:000000000-AB389:1:1111:19188:8774, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:04,058     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: Ignoring SAM validation error: ERROR: Record 3552, Read name M_M00933:21:000000000-AB389:1:2106:8836:18361, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:04,058     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: [Tue May 03 16:15:03 NZST 2016] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 0.01 minutes.
+INFO   2016-05-03 16:15:04,058     sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: Runtime.totalMemory()=257425408
+INFO   2016-05-03 16:15:04,058     Finished tool sample1_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam
+DEBUG   2016-05-03 16:15:04,058     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar AddOrReplaceReadGroups I=sample1_R1_001.fastq.collapsed.sort.md.bam O=sample1_R1_001.fastq.collapsed.sort.md.rg.bam VALIDATION_STRINGENCY=LENIENT RGPL=sample1 RGPU=sample1 RGSM=sample1 RGLB=sample1
+INFO   2016-05-03 16:15:04,059     sample1_R1_001.fastq.collapsed.sort.md.rgancient_filter preparing to run /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//ancient_filter.py -d 2 --c2t --g2a -i sample1_R1_001.fastq.collapsed.sort.md.rg.bam -o sample1_R1_001.fastq.collapsed.sort.md.rg.ancient_filter.bam -f bam
+INFO   2016-05-03 16:15:04,073     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: [Tue May 03 16:15:03 NZST 2016] picard.sam.AddOrReplaceReadGroups INPUT=sample_R1_001.fastq.collapsed.sort.md.bam OUTPUT=sample_R1_001.fastq.collapsed.sort.md.rg.bam RGLB=sample RGPL=sample RGPU=sample RGSM=sample VALIDATION_STRINGENCY=LENIENT    RGID=1 VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+INFO   2016-05-03 16:15:04,073     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: [Tue May 03 16:15:03 NZST 2016] Executing as smilefreak@Jamess-MacBook-Pro-2.local on Mac OS X 10.11.4 x86_64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_60-b27; Picard version: 2.0.1(fe51f432e4b918385037e6d15e958f0298203e28_1449251266) JdkDeflater
+INFO   2016-05-03 16:15:04,073     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: INFO	2016-05-03 16:15:03	AddOrReplaceReadGroups	Created read group ID=1 PL=sample LB=sample SM=sample
+INFO   2016-05-03 16:15:04,074     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: 
+INFO   2016-05-03 16:15:04,074     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: Ignoring SAM validation error: ERROR: Record 9, Read name M_M00933:21:000000000-AB389:1:1111:19188:8774, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:04,074     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: Ignoring SAM validation error: ERROR: Record 3552, Read name M_M00933:21:000000000-AB389:1:2106:8836:18361, MAPQ should be 0 for unmapped read.
+INFO   2016-05-03 16:15:04,074     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: [Tue May 03 16:15:03 NZST 2016] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 0.01 minutes.
+INFO   2016-05-03 16:15:04,074     sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam STDERR: Runtime.totalMemory()=257425408
+INFO   2016-05-03 16:15:04,074     Finished tool sample_R1_001.fastq.collapsed.sort.md.rg.bam_rg_bam
+DEBUG   2016-05-03 16:15:04,074     command = java -jar /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/src/picard-tools-2.0.1/picard.jar AddOrReplaceReadGroups I=sample_R1_001.fastq.collapsed.sort.md.bam O=sample_R1_001.fastq.collapsed.sort.md.rg.bam VALIDATION_STRINGENCY=LENIENT RGPL=sample RGPU=sample RGSM=sample RGLB=sample
+INFO   2016-05-03 16:15:04,075     sample_R1_001.fastq.collapsed.sort.md.rgancient_filter preparing to run /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//ancient_filter.py -d 2 --c2t --g2a -i sample_R1_001.fastq.collapsed.sort.md.rg.bam -o sample_R1_001.fastq.collapsed.sort.md.rg.ancient_filter.bam -f bam
+INFO   2016-05-03 16:15:05,689     Finished tool sample1_R1_001.fastq.collapsed.sort.md.rgancient_filter
+DEBUG   2016-05-03 16:15:05,689     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//ancient_filter.py -d 2 --c2t --g2a -i sample1_R1_001.fastq.collapsed.sort.md.rg.bam -o sample1_R1_001.fastq.collapsed.sort.md.rg.ancient_filter.bam -f bam
+INFO   2016-05-03 16:15:05,704     Finished tool sample_R1_001.fastq.collapsed.sort.md.rgancient_filter
+DEBUG   2016-05-03 16:15:05,704     command = /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/scripts//ancient_filter.py -d 2 --c2t --g2a -i sample_R1_001.fastq.collapsed.sort.md.rg.bam -o sample_R1_001.fastq.collapsed.sort.md.rg.ancient_filter.bam -f bam
+INFO   2016-05-03 16:15:05,705     Pipeline completed successfully !

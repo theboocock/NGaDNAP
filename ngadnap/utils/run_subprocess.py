@@ -23,6 +23,7 @@ def run_subprocess(
         to avoid deadlock.
     """
     command = shlex.split(command)
+    logging.info(tool + " preparing to run " + ' '.join(command))
     if (working_dir is None):
         working_dir = '.'
     else:

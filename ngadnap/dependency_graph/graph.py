@@ -123,7 +123,6 @@ class CommandGraph(Graph):
                         total_success += 1 
                 if total_success == len(adjacent_nodes): 
                     commands_to_run.append(node)
-        #print([str(o) for o in commands_to_run])
         return commands_to_run 
 
         

@@ -1,0 +1,18 @@
+Started with the command: /Users/smilefreak/Library/Python/2.7/bin/mapDamage -i sample_R1_001.fastq.collapsed.sort.md.bam -d /Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/tmp_dir/sample_R1_001.fastq.collapsed.sort.md --rescale -r /Users/smilefreak/Programming/OpenSource/MyGitHub/ancient_dna_pipeline/ref/contamination.fa
+Performing Bayesian estimates
+Warning messages:
+1: package ‘ggplot2’ was built under R version 3.2.4 
+2: package ‘Rcpp’ was built under R version 3.2.3 
+Rescaling BAM: 'sample_R1_001.fastq.collapsed.sort.md.bam' -> '/Users/smilefreak/Programming/OpenSource/MyGitHub/NGaDNAP/tests/data/tmp_dir/sample_R1_001.fastq.collapsed.sort.md/sample_R1_001.fastq.collapsed.sort.md.rescaled.bam'
+Traceback (most recent call last):
+  File "/Users/smilefreak/Library/Python/2.7/bin/mapDamage", line 376, in <module>
+    sys.exit(main())
+  File "/Users/smilefreak/Library/Python/2.7/bin/mapDamage", line 363, in main
+    mapdamage.rescale.rescale_qual(ref, options)
+  File "/Users/smilefreak/Library/Python/2.7/lib/python/site-packages/mapdamage/rescale.py", line 345, in rescale_qual
+    hit = rescale_qual_read(bam, hit, ref, corr_prob,subs)
+  File "/Users/smilefreak/Library/Python/2.7/lib/python/site-packages/mapdamage/rescale.py", line 236, in rescale_qual_read
+    new_qual[pos_on_read] = phred_pval_to_char(1-newp)
+  File "/Users/smilefreak/Library/Python/2.7/lib/python/site-packages/mapdamage/rescale.py", line 14, in phred_pval_to_char
+    return chr(int(round(-10*math.log10(abs(pval)))+33))
+KeyboardInterrupt
